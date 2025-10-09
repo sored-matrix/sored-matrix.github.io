@@ -1,7 +1,7 @@
 // Simple password protection for static site
-// Default password: "admin"
+// Password: "43fs3ag#"
 
-const PASSWORD_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
+const PASSWORD_HASH = 'f8f5b86da42d5d1af12f32ff3c54f51b04f1df88c78edf713104cd130412289c';
 
 // Check if already authenticated
 if (sessionStorage.getItem('sored_auth') === 'true') {

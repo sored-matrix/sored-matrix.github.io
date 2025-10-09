@@ -2,7 +2,7 @@
 
 ## Obecne hasło
 
-**Domyślne hasło:** `admin`
+**Aktualne hasło:** `43fs3ag#`
 
 ## Jak zmienić hasło
 
