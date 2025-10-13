@@ -1,79 +1,131 @@
-// ApexTree Top-to-Bottom Org Chart with Bootstrap Icons
+// ApexTree org chart for relationships view with Bootstrap icons
 (function() {
   document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('apextree-diagram');
     if (!container) return;
 
     function showFallback() {
-      container.innerHTML = '<div class="text-center text-muted" style="padding:40px">Nie udało się wczytać wykresu. Spróbuj odświeżyć stronę lub wyłącz blokowanie skryptów.</div>';
+      container.innerHTML = '<div class="text-center text-muted" style="padding:40px">Nie udało się wczytać wykresu. Spróbuj odświeżyć stronę.</div>';
     }
 
-    if (typeof ApexTree === 'undefined') {
-      // library not loaded (possibly MIME blocked) -> show fallback
-      showFallback();
-      return;
-    }
-
-    const relView = document.getElementById('relationships-view');
-    function initIfActive() {
-      if (relView && relView.classList.contains('active') && !container.dataset.initialized) {
-        container.dataset.initialized = 'true';
-        initChart();
+    // Wait for ApexTree to be attached to window by ESM loader
+    function waitForApexTree(attempts = 0) {
+      if (typeof ApexTree !== 'undefined') {
+        initWhenActive();
+      } else if (attempts < 50) {
+        setTimeout(() => waitForApexTree(attempts + 1), 100);
+      } else {
+        showFallback();
       }
     }
+    waitForApexTree();
 
-    const observer = new MutationObserver(initIfActive);
-    observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['class'] });
-    initIfActive();
+    function initWhenActive() {
+      const relView = document.getElementById('relationships-view');
+      function checkAndInit() {
+        if (relView && relView.classList.contains('active') && !container.dataset.initialized) {
+          container.dataset.initialized = 'true';
+          initChart();
+        }
+      }
+      const observer = new MutationObserver(checkAndInit);
+      observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['class'] });
+      checkAndInit();
+    }
 
     function initChart() {
       const BLUE_ROOT = '#1e3a8a';
       const BLUE_CAPITAL = '#2563eb';
       const BLUE_DIM = '#3b82f6';
 
+      // Data structure with id, data object, options, and children
       const data = {
-        name: 'OSIĄGNIĘCIA\nedukacyjne',
-        color: BLUE_ROOT,
-        icon: 'bi-mortarboard-fill',
+        id: 'osiagniecia',
+        data: {
+          name: 'OSIĄGNIĘCIA\nedukacyjne',
+          icon: 'bi-mortarboard-fill'
+        },
+        options: {
+          nodeBGColor: BLUE_ROOT,
+          nodeBGColorHover: BLUE_ROOT
+        },
         children: [
-          { name: 'KAPITAŁ LUDZKI', color: BLUE_CAPITAL, icon: 'bi-person-badge-fill', children: [ { name: 'KADRY', color: BLUE_DIM, icon: 'bi-person-badge-fill' } ] },
-          { name: 'KAPITAŁ MATERIALNY', color: BLUE_CAPITAL, icon: 'bi-box-seam-fill', children: [ { name: 'ARCHITEKTURA', color: BLUE_DIM, icon: 'bi-building-fill' }, { name: 'ZASOBY', color: BLUE_DIM, icon: 'bi-box-seam-fill' } ] },
-          { name: 'KAPITAŁ ORGANIZACYJNY', color: BLUE_CAPITAL, icon: 'bi-diagram-3-fill', children: [ { name: 'ORGANIZACJA', color: BLUE_DIM, icon: 'bi-diagram-3-fill' }, { name: 'UCZESTNICTWO', color: BLUE_DIM, icon: 'bi-people-fill' } ] },
-          { name: 'KAPITAŁ RELACYJNY', color: BLUE_CAPITAL, icon: 'bi-chat-dots-fill', children: [ { name: 'KOMUNIKACJA', color: BLUE_DIM, icon: 'bi-chat-dots-fill' }, { name: 'CYFROWA', color: BLUE_DIM, icon: 'bi-laptop-fill' } ] },
-          { name: 'KAPITAŁ INTELEKTUALNY', color: BLUE_CAPITAL, icon: 'bi-book-fill', children: [ { name: 'DYDAKTYKA', color: BLUE_DIM, icon: 'bi-book-fill' } ] }
+          {
+            id: 'kap_ludzki',
+            data: { name: 'KAPITAŁ LUDZKI', icon: 'bi-person-badge-fill' },
+            options: { nodeBGColor: BLUE_CAPITAL, nodeBGColorHover: BLUE_CAPITAL },
+            children: [
+              { id: 'kadry', data: { name: 'KADRY', icon: 'bi-person-badge-fill' }, options: { nodeBGColor: BLUE_DIM, nodeBGColorHover: BLUE_DIM } }
+            ]
+          },
+          {
+            id: 'kap_materialny',
+            data: { name: 'KAPITAŁ MATERIALNY', icon: 'bi-box-seam-fill' },
+            options: { nodeBGColor: BLUE_CAPITAL, nodeBGColorHover: BLUE_CAPITAL },
+            children: [
+              { id: 'architektura', data: { name: 'ARCHITEKTURA', icon: 'bi-building-fill' }, options: { nodeBGColor: BLUE_DIM, nodeBGColorHover: BLUE_DIM } },
+              { id: 'zasoby', data: { name: 'ZASOBY', icon: 'bi-box-seam-fill' }, options: { nodeBGColor: BLUE_DIM, nodeBGColorHover: BLUE_DIM } }
+            ]
+          },
+          {
+            id: 'kap_org',
+            data: { name: 'KAPITAŁ ORGANIZACYJNY', icon: 'bi-diagram-3-fill' },
+            options: { nodeBGColor: BLUE_CAPITAL, nodeBGColorHover: BLUE_CAPITAL },
+            children: [
+              { id: 'organizacja', data: { name: 'ORGANIZACJA', icon: 'bi-diagram-3-fill' }, options: { nodeBGColor: BLUE_DIM, nodeBGColorHover: BLUE_DIM } },
+              { id: 'uczestnictwo', data: { name: 'UCZESTNICTWO', icon: 'bi-people-fill' }, options: { nodeBGColor: BLUE_DIM, nodeBGColorHover: BLUE_DIM } }
+            ]
+          },
+          {
+            id: 'kap_rel',
+            data: { name: 'KAPITAŁ RELACYJNY', icon: 'bi-chat-dots-fill' },
+            options: { nodeBGColor: BLUE_CAPITAL, nodeBGColorHover: BLUE_CAPITAL },
+            children: [
+              { id: 'komunikacja', data: { name: 'KOMUNIKACJA', icon: 'bi-chat-dots-fill' }, options: { nodeBGColor: BLUE_DIM, nodeBGColorHover: BLUE_DIM } },
+              { id: 'cyfrowa', data: { name: 'CYFROWA', icon: 'bi-laptop-fill' }, options: { nodeBGColor: BLUE_DIM, nodeBGColorHover: BLUE_DIM } }
+            ]
+          },
+          {
+            id: 'kap_int',
+            data: { name: 'KAPITAŁ INTELEKTUALNY', icon: 'bi-book-fill' },
+            options: { nodeBGColor: BLUE_CAPITAL, nodeBGColorHover: BLUE_CAPITAL },
+            children: [
+              { id: 'dydaktyka', data: { name: 'DYDAKTYKA', icon: 'bi-book-fill' }, options: { nodeBGColor: BLUE_DIM, nodeBGColorHover: BLUE_DIM } }
+            ]
+          }
         ]
       };
 
-      try {
-        const chart = new ApexTree.Tree(container, {
-          layout: 'top-to-bottom',
-          node: {
-            width: 260,
-            height: 100,
-            spacingX: 30,
-            spacingY: 50,
-            template: (node) => {
-              const icon = node.data.icon || 'bi-question-circle';
-              const name = node.data.name || '';
-              return (
-                '<div class="apext-node" style="border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.1);background:#fff;border:0;display:flex;align-items:center;gap:14px;padding:12px 16px;">' +
-                '  <div class="apext-icon" style="width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6a11cb,#2575fc);">' +
-                '    <i class="bi ' + icon + '" style="color:#fff;font-size:24px"></i>' +
-                '  </div>' +
-                '  <div class="apext-text" style="display:flex;flex-direction:column;gap:4px;">' +
-                '    <div class="apext-name" style="font-size:14px;font-weight:800;color:#1f2a3a;text-transform:uppercase;line-height:1.2">' + name + '</div>' +
-                '  </div>' +
-                '</div>'
-              );
-            },
-            connector: {
-              color: '#cbd5e1',
-              width: 2
-            }
-          },
-          data
-        });
+      const options = {
+        contentKey: 'data',
+        nodeWidth: 280,
+        nodeHeight: 100,
+        fontColor: '#1f2a3a',
+        borderColor: '#e5e7eb',
+        childrenSpacing: 40,
+        siblingSpacing: 30,
+        direction: 'top',
+        nodeTemplate: (content) => {
+          const name = content.name || '';
+          const icon = content.icon || 'bi-question-circle';
+          return `
+            <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;height:100%;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.1);">
+              <div style="width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6a11cb,#2575fc);flex-shrink:0;">
+                <i class="bi ${icon}" style="color:#fff;font-size:24px;"></i>
+              </div>
+              <div style="font-size:14px;font-weight:800;color:#1f2a3a;text-transform:uppercase;line-height:1.3;">${name}</div>
+            </div>
+          `;
+        },
+        canvasStyle: 'background:transparent;',
+        enableToolbar: false
+      };
 
+      try {
+        const tree = new ApexTree(container, options);
+        tree.render(data);
+
+        // High contrast mode
         function applyHC() {
           const isHC = document.body.classList.contains('high-contrast');
           container.classList.toggle('apext-hc', isHC);
@@ -82,6 +134,7 @@
         hcObs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
         applyHC();
       } catch (e) {
+        console.error('ApexTree render error:', e);
         showFallback();
       }
     }
