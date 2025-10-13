@@ -66,10 +66,7 @@
                         <i class="bi bi-grid-3x3-gap-fill"></i>
                         <span>Wymiary dostępności</span>
                     </button>
-                    <button class="view-tab" data-view="relationships" aria-label="Widok powiązań wymiarów">
-                        <i class="bi bi-diagram-3-fill"></i>
-                        <span>Powiązania wymiarów</span>
-                    </button>
+                    <!-- Relationships view temporarily disabled -->
                 </div>
             </div>
         </div>
@@ -206,22 +203,7 @@
         </div>
         <!-- End Dimensions View -->
 
-        <!-- Relationships View -->
-        <div id="relationships-view" class="content-view">
-            <div class="container">
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-10 text-center">
-                        <h2 class="section-title mb-4">Powiązania Wymiarów</h2>
-                        <p class="text-muted">Dziewięć badanych przez nas wymiarów to różne formy kapitału szkoły – zasobów służących edukacji włączającej. Osiągnięcia edukacyjne to jedna z miar ich skuteczności.</p>
-                    </div>
-                </div>
-                
-                <div class="relationships-container">
-                    <div id="orgchart-diagram"></div>
-                </div>
-            </div>
-        </div>
-        <!-- End Relationships View -->
+        <!-- Relationships View disabled -->
         
         <!-- Indicators Section -->
         <section id="indicators-section" class="indicators-section py-5">
@@ -286,13 +268,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Highcharts Core + Sankey + Organization modules -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/sankey.js"></script>
-    <script src="https://code.highcharts.com/modules/organization.js"></script>
-    
     <!-- External JavaScript -->
     <script src="static/script.js"></script>
-    <script src="static/tree-highcharts.js"></script>
 </body>
 </html>
