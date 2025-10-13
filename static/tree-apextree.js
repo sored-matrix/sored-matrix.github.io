@@ -136,6 +136,8 @@
       };
 
       try {
+        // Increase canvas height slightly to drop content below potential credits area
+        options.height = (options.nodeHeight * 3) + 400;
         const tree = new ApexTree(container, options);
         tree.render(data);
 
@@ -147,11 +149,15 @@
             'a[href*="apextree"]',
             '[class*="credits"]'
           ];
+          const scope = document; // credits bywają wstrzykiwane poza containerem
           selectors.forEach(sel => {
-            container.querySelectorAll(sel).forEach(el => {
+            scope.querySelectorAll(sel).forEach(el => {
               el.style.display = 'none';
               el.style.visibility = 'hidden';
               el.style.pointerEvents = 'none';
+              el.setAttribute('aria-hidden', 'true');
+              el.style.position = 'absolute';
+              el.style.bottom = '-1000px';
             });
           });
         }

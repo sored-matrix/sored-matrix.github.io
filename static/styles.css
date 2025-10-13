@@ -466,6 +466,10 @@ body.high-contrast .apex-diagram .apexcharts-rect { stroke: #000 !important; str
     overflow-x: auto;
 }
 
+/* Move any lingering watermark far below */
+.apextree-diagram .apexcharts-credits { position: absolute !important; bottom: -1200px !important; }
+.apexcharts-credits { position: absolute !important; bottom: -1200px !important; }
+
 /* Force thick connector lines */
 .apextree-diagram svg line,
 .apextree-diagram svg path {
