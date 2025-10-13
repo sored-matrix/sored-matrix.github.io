@@ -38,7 +38,7 @@
     template.node =
       '<rect x="0" y="0" width="220" height="120" rx="16" ry="16" fill="#ffffff" stroke="#e9eef5" stroke-width="0" filter="url(#ocShadow)" />' +
       '<g transform="translate(20,18)">'+
-      '  <foreignObject width="64" height="64"><div class="oc-icon-wrap">{val-icon}</div></foreignObject>'+
+      '  <foreignObject width="64" height="64" data-icon-placeholder="true"></foreignObject>'+
       '  <g transform="translate(88,10)">'+
       '    <text class="oc-name" style="font-size:18px;font-weight:800;fill:#1f2a3a;">{val-name}</text>'+
       '    <text class="oc-title" style="font-size:12px;fill:#6b7280;dominant-baseline:hanging;" y="24">{val-title}</text>'+
@@ -70,8 +70,7 @@
       template,
       nodeBinding: {
         field_0: 'name',
-        field_1: 'title',
-        "icon": 'icon'
+        field_1: 'title'
       },
       enableSearch: false,
       mouseScrool: OrgChart.action.none,
@@ -81,8 +80,19 @@
       roots: ['root']
     });
 
-    // Set icons HTML
-    const data = nodes.map(n => Object.assign({}, n, { icon: icon(n.bi) }));
+    // After chart renders, inject icons into foreignObject placeholders
+    chart.on('redraw', function() {
+      container.querySelectorAll('[data-icon-placeholder]').forEach(fo => {
+        const nodeId = fo.closest('[node-id]')?.getAttribute('node-id');
+        if (!nodeId) return;
+        const nodeData = nodes.find(n => n.id === nodeId);
+        if (!nodeData) return;
+        fo.innerHTML = `<div xmlns="http://www.w3.org/1999/xhtml" class="oc-icon-wrap">${icon(nodeData.bi)}</div>`;
+      });
+    });
+
+    // Prepare data
+    const data = nodes.map(n => ({ id: n.id, pid: n.pid, name: n.name, title: n.title }));
 
     chart.load(data);
   });
