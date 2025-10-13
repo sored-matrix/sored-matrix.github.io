@@ -377,6 +377,11 @@ body.high-contrast .hero-section {
     animation: fadeInView 0.4s ease;
 }
 
+/* Hide indicators section when relationships view is active */
+#relationships-view.active ~ .indicators-section {
+    display: none;
+}
+
 @keyframes fadeInView {
     from {
         opacity: 0;
@@ -389,21 +394,23 @@ body.high-contrast .hero-section {
 }
 
 .relationships-container {
-    min-height: 600px;
-    padding: 40px 20px;
+    min-height: 700px;
+    padding: 20px;
     background: var(--card-bg);
     border-radius: 15px;
     box-shadow: var(--card-shadow);
-    overflow: auto;
+    overflow: visible;
+    margin-bottom: 60px;
 }
 
 /* Tree Diagram Styles */
 #tree-diagram {
     width: 100%;
-    min-height: 800px;
+    min-height: 850px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 0;
 }
 
 #tree-diagram svg {

@@ -119,14 +119,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get container dimensions
         const containerNode = container.node();
         const width = containerNode.clientWidth || 1200;
-        const height = 800;
+        const height = 900;
         
         // Create SVG
         const svg = container.append("svg")
             .attr("width", width)
             .attr("height", height)
             .attr("viewBox", [0, 0, width, height])
-            .attr("style", "max-width: 100%; height: auto;");
+            .attr("style", "max-width: 100%; height: auto; display: block;");
         
         // Create a group for the tree
         const g = svg.append("g")
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Create tree layout (horizontal, right-to-left)
         const tree = d3.tree()
-            .size([height - 100, width - 300])
+            .size([height - 150, width - 300])
             .separation((a, b) => (a.parent == b.parent ? 1 : 1.2));
         
         // Create hierarchy
