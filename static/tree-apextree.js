@@ -139,6 +139,27 @@
         const tree = new ApexTree(container, options);
         tree.render(data);
 
+        // Hide vendor watermark/credits if injected by the lib (ApexCharts/ApexTree)
+        function hideCredits() {
+          const selectors = [
+            '.apexcharts-credits',
+            'a[href*="apexcharts"]',
+            'a[href*="apextree"]',
+            '[class*="credits"]'
+          ];
+          selectors.forEach(sel => {
+            container.querySelectorAll(sel).forEach(el => {
+              el.style.display = 'none';
+              el.style.visibility = 'hidden';
+              el.style.pointerEvents = 'none';
+            });
+          });
+        }
+        // Run after initial render and observe future DOM changes
+        hideCredits();
+        const mo = new MutationObserver(hideCredits);
+        mo.observe(container, { childList: true, subtree: true });
+
         // High contrast mode
         function applyHC() {
           const isHC = document.body.classList.contains('high-contrast');
