@@ -2,7 +2,17 @@
 (function() {
   document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('apextree-diagram');
-    if (!container || typeof ApexTree === 'undefined') return;
+    if (!container) return;
+
+    function showFallback() {
+      container.innerHTML = '<div class="text-center text-muted" style="padding:40px">Nie udało się wczytać wykresu. Spróbuj odświeżyć stronę lub wyłącz blokowanie skryptów.</div>';
+    }
+
+    if (typeof ApexTree === 'undefined') {
+      // library not loaded (possibly MIME blocked) -> show fallback
+      showFallback();
+      return;
+    }
 
     const relView = document.getElementById('relationships-view');
     function initIfActive() {
@@ -34,45 +44,46 @@
         ]
       };
 
-      const chart = new ApexTree.Tree(container, {
-        layout: 'top-to-bottom',
-        node: {
-          width: 260,
-          height: 100,
-          spacingX: 30,
-          spacingY: 50,
-          template: (node) => {
-            const icon = node.data.icon || 'bi-question-circle';
-            const color = node.data.color || BLUE_DIM;
-            const name = node.data.name || '';
-            return (
-              '<div class="apext-node" style="border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.1);background:#fff;border:0;display:flex;align-items:center;gap:14px;padding:12px 16px;">' +
-              '  <div class="apext-icon" style="width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6a11cb,#2575fc);">' +
-              '    <i class="bi ' + icon + '" style="color:#fff;font-size:24px"></i>' +
-              '  </div>' +
-              '  <div class="apext-text" style="display:flex;flex-direction:column;gap:4px;">' +
-              '    <div class="apext-name" style="font-size:14px;font-weight:800;color:#1f2a3a;text-transform:uppercase;line-height:1.2">' + name + '</div>' +
-              '  </div>' +
-              '</div>'
-            );
+      try {
+        const chart = new ApexTree.Tree(container, {
+          layout: 'top-to-bottom',
+          node: {
+            width: 260,
+            height: 100,
+            spacingX: 30,
+            spacingY: 50,
+            template: (node) => {
+              const icon = node.data.icon || 'bi-question-circle';
+              const name = node.data.name || '';
+              return (
+                '<div class="apext-node" style="border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.1);background:#fff;border:0;display:flex;align-items:center;gap:14px;padding:12px 16px;">' +
+                '  <div class="apext-icon" style="width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6a11cb,#2575fc);">' +
+                '    <i class="bi ' + icon + '" style="color:#fff;font-size:24px"></i>' +
+                '  </div>' +
+                '  <div class="apext-text" style="display:flex;flex-direction:column;gap:4px;">' +
+                '    <div class="apext-name" style="font-size:14px;font-weight:800;color:#1f2a3a;text-transform:uppercase;line-height:1.2">' + name + '</div>' +
+                '  </div>' +
+                '</div>'
+              );
+            },
+            connector: {
+              color: '#cbd5e1',
+              width: 2
+            }
           },
-          connector: {
-            color: '#cbd5e1',
-            width: 2
-          },
-          getStyle: (node) => ({ background: node.data.color || BLUE_DIM })
-        },
-        data
-      });
+          data
+        });
 
-      // High contrast mode
-      function applyHC() {
-        const isHC = document.body.classList.contains('high-contrast');
-        container.classList.toggle('apext-hc', isHC);
+        function applyHC() {
+          const isHC = document.body.classList.contains('high-contrast');
+          container.classList.toggle('apext-hc', isHC);
+        }
+        const hcObs = new MutationObserver(applyHC);
+        hcObs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        applyHC();
+      } catch (e) {
+        showFallback();
       }
-      const hcObs = new MutationObserver(applyHC);
-      hcObs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-      applyHC();
     }
   });
 })();
