@@ -403,8 +403,8 @@ body.high-contrast .hero-section {
     margin-bottom: 60px;
 }
 
-/* Tree Diagram Styles */
-#tree-diagram {
+/* OrgChart Diagram Styles */
+#orgchart-diagram {
     width: 100%;
     min-height: 850px;
     display: flex;
@@ -413,7 +413,7 @@ body.high-contrast .hero-section {
     padding: 20px 0;
 }
 
-#tree-diagram svg {
+#orgchart-diagram svg {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: visible;
 }
@@ -455,7 +455,7 @@ body.high-contrast .hero-section {
 
 /* Responsive tree diagram */
 @media (max-width: 768px) {
-    #tree-diagram {
+    #orgchart-diagram {
         min-height: 600px;
     }
 }
