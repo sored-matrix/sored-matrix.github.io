@@ -106,17 +106,29 @@
         childrenSpacing: 100,
         siblingSpacing: 80,
         direction: 'top',
-        nodeTemplate: (content) => {
+        nodeTemplate: (content, node) => {
           const name = content.name || '';
           const icon = content.icon || 'bi-question-circle';
-          return `
-            <div style="display:flex;align-items:center;gap:50px;padding:50px 70px;height:100%;border-radius:28px;box-shadow:0 12px 40px rgba(0,0,0,.3);">
-              <div style="width:240px;height:240px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.3);flex-shrink:0;box-shadow:0 8px 24px rgba(0,0,0,.25);">
-                <i class="bi ${icon}" style="color:#fff;font-size:130px;"></i>
+          const isCapital = name.startsWith('KAPITAŁ');
+          
+          if (isCapital) {
+            // Kapitały bez ikon - tylko tekst wycentrowany
+            return `
+              <div style="display:flex;align-items:center;justify-content:center;padding:50px 70px;height:100%;border-radius:28px;box-shadow:0 12px 40px rgba(0,0,0,.3);">
+                <div style="font-size:64px;font-weight:900;color:#fff;text-transform:uppercase;line-height:1.1;text-align:center;text-shadow:0 4px 8px rgba(0,0,0,.4);">${name}</div>
               </div>
-              <div style="font-size:64px;font-weight:900;color:#fff;text-transform:uppercase;line-height:1.1;text-shadow:0 4px 8px rgba(0,0,0,.4);">${name}</div>
-            </div>
-          `;
+            `;
+          } else {
+            // Root i wymiary z ikonami
+            return `
+              <div style="display:flex;align-items:center;gap:50px;padding:50px 70px;height:100%;border-radius:28px;box-shadow:0 12px 40px rgba(0,0,0,.3);">
+                <div style="width:240px;height:240px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.3);flex-shrink:0;box-shadow:0 8px 24px rgba(0,0,0,.25);">
+                  <i class="bi ${icon}" style="color:#fff;font-size:130px;"></i>
+                </div>
+                <div style="font-size:64px;font-weight:900;color:#fff;text-transform:uppercase;line-height:1.1;text-shadow:0 4px 8px rgba(0,0,0,.4);">${name}</div>
+              </div>
+            `;
+          }
         },
         canvasStyle: 'background:transparent;',
         enableToolbar: false

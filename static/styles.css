@@ -466,6 +466,13 @@ body.high-contrast .apex-diagram .apexcharts-rect { stroke: #000 !important; str
     overflow-x: auto;
 }
 
+/* Force thick connector lines */
+.apextree-diagram svg line,
+.apextree-diagram svg path {
+    stroke-width: 8px !important;
+    stroke: #cbd5e1 !important;
+}
+
 body.high-contrast .apext-node { background: #000 !important; border: 2px solid #fff !important; }
 body.high-contrast .apext-icon { background: #000 !important; border: 2px solid #fff !important; }
 body.high-contrast .apext-icon i { color: #fff !important; }
