@@ -181,20 +181,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add rectangles for dimensions and capitals
         node.filter(d => !d.data.isCapital || d.depth === 1)
             .append("rect")
-            .attr("width", d => d.data.isCapital ? 160 : 140)
-            .attr("height", d => d.data.isCapital ? 56 : 84)
-            .attr("x", d => d.data.isCapital ? -80 : -70)
-            .attr("y", d => d.data.isCapital ? -28 : -42)
-            .attr("rx", 8)
+            .attr("width", d => d.data.isCapital ? 160 : 170)
+            .attr("height", d => d.data.isCapital ? 56 : 86)
+            .attr("x", d => d.data.isCapital ? -80 : -85)
+            .attr("y", d => d.data.isCapital ? -28 : -43)
+            .attr("rx", d => d.data.isCapital ? 8 : 12)
             .attr("fill", d => {
                 if (d.depth === 0) return "url(#gradient1)"; // Root
                 if (d.data.isCapital) return "#f8f9fa"; // Capitals
                 return "url(#gradient2)"; // Dimensions
             })
             .attr("stroke", d => d.data.isCapital ? "#6a11cb" : "#2575fc")
-            .attr("stroke-width", d => d.depth === 0 ? 3 : 2);
+            .attr("stroke-width", d => d.depth === 0 ? 3 : 0)
+            .attr("filter", d => (!d.data.isCapital && d.depth !== 0) ? "url(#cardShadow)" : null);
         
-        // Add gradients
+        // Add gradients and shadows
         const defs = svg.append("defs");
         
         const gradient1 = defs.append("linearGradient")
@@ -224,14 +225,27 @@ document.addEventListener('DOMContentLoaded', function() {
             .attr("offset", "100%")
             .attr("stop-color", "#6a11cb")
             .attr("stop-opacity", "0.8");
+
+        // Card-like shadow for dimension nodes
+        const shadow = defs.append("filter")
+            .attr("id", "cardShadow")
+            .attr("x", "-50%")
+            .attr("y", "-50%")
+            .attr("width", "200%")
+            .attr("height", "200%");
+        shadow.append("feDropShadow")
+            .attr("dx", 0)
+            .attr("dy", 2)
+            .attr("stdDeviation", 2.2)
+            .attr("flood-color", "rgba(0,0,0,0.25)");
         
         // Add icons for dimensions (using foreign object for HTML)
         node.filter(d => !d.data.isCapital && d.data.icon)
             .append("foreignObject")
-            .attr("width", 44)
-            .attr("height", 44)
-            .attr("x", -22)
-            .attr("y", -34)
+            .attr("width", 46)
+            .attr("height", 46)
+            .attr("x", -23)
+            .attr("y", -32)
             .append("xhtml:div")
             .attr("class", "tree-icon-container")
             .html(d => `<i class="bi ${d.data.icon} tree-icon"></i>`);
