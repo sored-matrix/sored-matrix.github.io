@@ -415,6 +415,7 @@ body.high-contrast .hero-section {
 
 #tree-diagram svg {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: visible;
 }
 
 .tree-link {
@@ -440,7 +441,7 @@ body.high-contrast .hero-section {
 }
 
 .tree-icon {
-    font-size: 28px;
+    font-size: 30px;
     color: white;
 }
 

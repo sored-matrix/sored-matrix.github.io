@@ -118,28 +118,35 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Get container dimensions
         const containerNode = container.node();
-        const width = containerNode.clientWidth || 1200;
-        const height = 900;
-        
+        const fullWidth = containerNode.clientWidth || 1200;
+        const margins = { top: 40, right: 160, bottom: 40, left: 160 };
+
+        // Build hierarchy early to adapt height to content
+        const root = d3.hierarchy(treeData);
+        const leaves = root.leaves().length;
+        const perLeaf = 90; // vertical spacing per leaf for readability
+        const treeHeight = Math.max(520, leaves * perLeaf);
+
+        const width = fullWidth;
+        const height = treeHeight + margins.top + margins.bottom;
+
         // Create SVG
         const svg = container.append("svg")
             .attr("width", width)
             .attr("height", height)
             .attr("viewBox", [0, 0, width, height])
+            .attr("preserveAspectRatio", "xMidYMid meet")
             .attr("style", "max-width: 100%; height: auto; display: block;");
-        
-        // Create a group for the tree
+
+        // Create a group for the tree (anchor near top-right and draw leftwards)
         const g = svg.append("g")
-            .attr("transform", `translate(${width - 150},${height / 2})`);
-        
+            .attr("transform", `translate(${width - margins.right},${margins.top})`);
+
         // Create tree layout (horizontal, right-to-left)
         const tree = d3.tree()
-            .size([height - 150, width - 300])
-            .separation((a, b) => (a.parent == b.parent ? 1 : 1.2));
-        
-        // Create hierarchy
-        const root = d3.hierarchy(treeData);
-        
+            .size([treeHeight, width - (margins.left + margins.right)])
+            .separation((a, b) => (a.parent === b.parent ? 1 : 1.2));
+
         // Generate tree
         tree(root);
         
@@ -174,10 +181,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add rectangles for dimensions and capitals
         node.filter(d => !d.data.isCapital || d.depth === 1)
             .append("rect")
-            .attr("width", d => d.data.isCapital ? 140 : 120)
-            .attr("height", d => d.data.isCapital ? 50 : 80)
-            .attr("x", d => d.data.isCapital ? -70 : -60)
-            .attr("y", d => d.data.isCapital ? -25 : -40)
+            .attr("width", d => d.data.isCapital ? 160 : 140)
+            .attr("height", d => d.data.isCapital ? 56 : 84)
+            .attr("x", d => d.data.isCapital ? -80 : -70)
+            .attr("y", d => d.data.isCapital ? -28 : -42)
             .attr("rx", 8)
             .attr("fill", d => {
                 if (d.depth === 0) return "url(#gradient1)"; // Root
@@ -221,10 +228,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add icons for dimensions (using foreign object for HTML)
         node.filter(d => !d.data.isCapital && d.data.icon)
             .append("foreignObject")
-            .attr("width", 40)
-            .attr("height", 40)
-            .attr("x", -20)
-            .attr("y", -35)
+            .attr("width", 44)
+            .attr("height", 44)
+            .attr("x", -22)
+            .attr("y", -34)
             .append("xhtml:div")
             .attr("class", "tree-icon-container")
             .html(d => `<i class="bi ${d.data.icon} tree-icon"></i>`);
@@ -234,12 +241,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .append("text")
             .attr("dy", d => d.data.icon ? 15 : 5)
             .attr("text-anchor", "middle")
-            .attr("fill", d => d.depth === 0 ? "white" : (d.data.isCapital ? "#6a11cb" : "#2575fc"))
+            .attr("fill", d => d.depth === 0 ? "#ffffff" : (d.data.isCapital ? "#3b3b3b" : "#ffffff"))
             .attr("font-weight", d => (d.depth === 0 || d.data.isCapital) ? "700" : "600")
             .attr("font-size", d => {
-                if (d.depth === 0) return "14px";
-                if (d.data.isCapital) return "12px";
-                return "11px";
+                if (d.depth === 0) return "16px";
+                if (d.data.isCapital) return "13px";
+                return "12px";
             })
             .selectAll("tspan")
             .data(d => d.data.name.split('\n'))
