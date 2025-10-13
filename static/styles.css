@@ -1492,3 +1492,7 @@ body.high-contrast .hc-icon-circle i {
     color: #fff !important;
 }
 
+
+.apexgantt-watermark {
+    visibility: hidden !important;
+}
