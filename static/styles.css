@@ -1325,3 +1325,76 @@ body.high-contrast .skip-link:focus {
     }
 }
 
+/* Highcharts Organization Chart Custom Styles */
+.hc-node-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 180px;
+}
+
+.hc-icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 6px 16px rgba(37,117,252,.35);
+}
+
+.hc-icon-circle i {
+    font-size: 24px;
+    color: white;
+}
+
+.hc-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hc-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1f2a3a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+}
+
+.hc-subtitle {
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+/* High contrast mode for Highcharts */
+body.high-contrast .hc-node-card {
+    background: #000;
+    border: 3px solid #fff;
+}
+
+body.high-contrast .hc-name {
+    color: #ffff00;
+}
+
+body.high-contrast .hc-subtitle {
+    color: #fff;
+}
+
+body.high-contrast .hc-icon-circle {
+    background: #ffff00;
+    border: 2px solid #fff;
+}
+
+body.high-contrast .hc-icon-circle i {
+    color: #000;
+}
+
