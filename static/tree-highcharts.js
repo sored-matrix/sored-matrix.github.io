@@ -83,9 +83,12 @@
         chart: {
           type: 'organization',
           inverted: true, // Makes root appear on right
-          height: 900,
-          marginLeft: 50,
-          marginRight: 50
+          height: 1200,
+          width: null, // full width
+          marginLeft: 100,
+          marginRight: 100,
+          marginTop: 50,
+          marginBottom: 50
         },
         title: {
           text: null
@@ -103,36 +106,41 @@
           data: chartData.map(node => {
             return node.parent ? [node.parent, node.id] : null;
           }).filter(Boolean),
-          levels: [{ level: 0, color: BLUE_ROOT }, { level: 1, color: BLUE_CAPITAL }, { level: 2, color: BLUE_DIMENSION }],
+          levels: [
+            { level: 0, color: BLUE_ROOT }, 
+            { level: 1, color: BLUE_CAPITAL }, 
+            { level: 2, color: BLUE_DIMENSION }
+          ],
           nodes: chartData.map(node => ({
             id: node.id,
             name: dimensions[node.id].name,
             title: dimensions[node.id].subtitle,
-            color: dimensions[node.id].color
+            color: dimensions[node.id].color,
+            icon: dimensions[node.id].icon
           })),
           colorByPoint: false,
-          nodeWidth: 'auto',
+          nodeWidth: 280,
           dataLabels: {
-            useHTML: true
-          },
-          nodeFormatter: function () {
-            const d = dimensions[this.point.id];
-            return (
-              '<div class="hc-node-card">' +
-              '  <div class="hc-icon-circle">' +
-              '    <i class="bi ' + d.icon + '"></i>' +
-              '  </div>' +
-              '  <div class="hc-text">' +
-              '    <div class="hc-name">' + d.name + '</div>' +
-              (d.subtitle ? ('    <div class="hc-subtitle">' + d.subtitle + '</div>') : '') +
-              '  </div>' +
-              '</div>'
-            );
+            useHTML: true,
+            formatter: function () {
+              const d = dimensions[this.point.id];
+              return (
+                '<div class="hc-node-card">' +
+                '  <div class="hc-icon-circle">' +
+                '    <i class="bi ' + d.icon + '"></i>' +
+                '  </div>' +
+                '  <div class="hc-text">' +
+                '    <div class="hc-name">' + d.name + '</div>' +
+                (d.subtitle ? ('    <div class="hc-subtitle">' + d.subtitle + '</div>') : '') +
+                '  </div>' +
+                '</div>'
+              );
+            }
           },
           borderColor: 'white',
-          nodePadding: 10,
+          nodePadding: 20,
           linkLineWidth: 2,
-          linkColor: '#e5e7eb'
+          linkColor: '#cbd5e1'
         }]
       });
 
