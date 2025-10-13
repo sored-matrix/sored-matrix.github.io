@@ -189,11 +189,28 @@
         <!-- Indicators Section -->
         <section id="indicators-section" class="indicators-section py-5">
             <div class="container">
-                <h2 class="text-center mb-5">Wskaźniki</h2>
+                <!-- Tab Navigation -->
+                <div class="content-tabs">
+                    <button class="tab-btn active" data-tab="wskazniki">Wskaźniki</button>
+                    <span class="tab-separator">|</span>
+                    <button class="tab-btn" data-tab="pytania">Pytania</button>
+                </div>
                 
-                <!-- Placeholder for dynamic indicator content -->
-                <div id="indicator-content" class="indicator-content">
-                    <p class="text-center text-muted">Wybierz wymiar dostępności, aby zobaczyć wskaźniki</p>
+                <!-- Tab Content -->
+                <div class="tab-content-wrapper">
+                    <!-- Wskaźniki Tab (default) -->
+                    <div id="wskazniki-content" class="tab-content active">
+                        <div id="indicator-content" class="indicator-content">
+                            <p class="text-center text-muted">Wybierz wymiar dostępności, aby zobaczyć wskaźniki</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pytania Tab -->
+                    <div id="pytania-content" class="tab-content">
+                        <div id="questions-content" class="questions-content">
+                            <p class="text-center text-muted">Wybierz wymiar dostępności, aby zobaczyć pytania</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

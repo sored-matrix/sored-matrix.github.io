@@ -418,12 +418,82 @@ body.high-contrast .icon-wrapper i {
     margin-top: 50px;
 }
 
-.indicators-section h2 {
-    color: var(--primary-color);
-    font-weight: 700;
+/* Content Tabs */
+.content-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
-.indicator-content {
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    position: relative;
+}
+
+.tab-btn:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    border-radius: 2px;
+}
+
+.tab-separator {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    opacity: 0.3;
+}
+
+.tab-content-wrapper {
+    position: relative;
+    min-height: 400px;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.indicator-content,
+.questions-content {
     background: var(--card-bg);
     padding: 40px;
     border-radius: 15px;
@@ -456,6 +526,130 @@ body.high-contrast .icon-wrapper i {
 }
 
 .indicator-item p {
+    margin: 0;
+    color: var(--text-dark);
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Accordion for questions */
+.accordion {
+    --bs-accordion-border-color: rgba(0, 0, 0, 0.1);
+    --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.accordion-item {
+    border: 1px solid var(--bs-accordion-border-color);
+    margin-bottom: 10px;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(106, 17, 203, 0.25);
+    border-color: var(--primary-color);
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.question-number-accordion {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.accordion-button:not(.collapsed) .question-number-accordion {
+    background: white;
+    color: var(--primary-color);
+}
+
+.accordion-body {
+    padding: 20px;
+    background: var(--card-bg);
+}
+
+.answers-list {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+}
+
+.answers-list li {
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Data sources */
+.data-sources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.data-source-item {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--gradient-mid);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.data-source-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--card-shadow);
+}
+
+.source-number {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.data-source-item p {
     margin: 0;
     color: var(--text-dark);
     font-weight: 500;
@@ -657,6 +851,72 @@ body.high-contrast .indicator-item {
 
 body.high-contrast .indicator-icon {
     color: #000000;
+}
+
+body.high-contrast .question-item {
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-left: 6px solid #000000;
+}
+
+body.high-contrast .question-number {
+    background: #000000;
+    color: #ffffff;
+}
+
+body.high-contrast .tab-btn {
+    color: #000000;
+}
+
+body.high-contrast .tab-btn.active {
+    color: #000000;
+    font-weight: 700;
+}
+
+body.high-contrast .tab-separator {
+    color: #000000;
+}
+
+body.high-contrast .accordion-button {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body.high-contrast .accordion-button:not(.collapsed) {
+    background: #000000;
+    color: #ffffff;
+}
+
+body.high-contrast .accordion-item {
+    border: 2px solid #000000;
+}
+
+body.high-contrast .accordion-body {
+    background: #ffffff;
+    border-top: 2px solid #000000;
+}
+
+body.high-contrast .question-number-accordion {
+    background: #000000;
+    color: #ffffff;
+}
+
+body.high-contrast .accordion-button:not(.collapsed) .question-number-accordion {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body.high-contrast .data-source-item {
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-left: 6px solid #000000;
+}
+
+body.high-contrast .source-number {
+    background: #000000;
+    color: #ffffff;
 }
 
 body.high-contrast .dimension-card.active {

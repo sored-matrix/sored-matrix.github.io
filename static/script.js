@@ -114,11 +114,19 @@ contrastToggle.addEventListener('click', function() {
 const dimensionCards = document.querySelectorAll('.dimension-card');
 const indicatorSection = document.getElementById('indicators-section');
 const indicatorContent = document.getElementById('indicator-content');
+const questionsContent = document.getElementById('questions-content');
 
-// Load indicator data from JSON file
+// Load data from JSON files
 let indicatorData = {};
 let definitionsData = {};
+let questionsData = {};
+let dataSourcesData = {};
 let dataLoaded = false;
+let currentDimension = null;
+
+// Tab management
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
 
 // Fetch indicators from JSON
 fetch('static/indicators_for_website.json')
@@ -132,14 +140,30 @@ fetch('static/indicators_for_website.json')
         indicatorData = data;
         console.log('Indicators loaded successfully', Object.keys(data));
         
-        // Also fetch definitions
+        // Fetch definitions
         return fetch('static/indicator_definitions.json');
     })
     .then(response => response.json())
     .then(data => {
         definitionsData = data;
-        dataLoaded = true;
         console.log('Definitions loaded successfully', Object.keys(data).length, 'definitions');
+        
+        // Fetch questions
+        return fetch('static/questions_by_dimension.json');
+    })
+    .then(response => response.json())
+    .then(data => {
+        questionsData = data;
+        console.log('Questions loaded successfully', Object.keys(data).length, 'dimensions');
+        
+        // Fetch data sources
+        return fetch('static/data_sources.json');
+    })
+    .then(response => response.json())
+    .then(data => {
+        dataSourcesData = data;
+        dataLoaded = true;
+        console.log('Data sources loaded successfully');
     })
     .catch(error => {
         console.error('Error loading data:', error);
@@ -147,6 +171,8 @@ fetch('static/indicators_for_website.json')
         // Fallback to empty data if file not found
         indicatorData = {};
         definitionsData = {};
+        questionsData = {};
+        dataSourcesData = {};
     });
 
 // Function to display indicators
@@ -206,12 +232,149 @@ function showIndicators(dimension) {
     }, 100);
 }
 
+// Function to display questions or data sources
+function showQuestions(dimension) {
+    if (!dataLoaded) {
+        console.log('Data not loaded yet, waiting...');
+        setTimeout(() => showQuestions(dimension), 100);
+        return;
+    }
+    
+    // Check if this dimension has data sources instead of questions (OSIĄGNIĘCIA)
+    if (dataSourcesData[dimension]) {
+        showDataSources(dimension);
+        return;
+    }
+    
+    const data = questionsData[dimension];
+    if (!data || !data.questions || data.questions.length === 0) {
+        console.log('No questions found for dimension:', dimension);
+        questionsContent.innerHTML = '<p class="text-center text-muted">Brak pytań dla tego wymiaru</p>';
+        return;
+    }
+    
+    // Build HTML for questions with accordion
+    let html = `
+        <h3 class="mb-4 text-center">${data.title}</h3>
+        <div class="accordion" id="questionsAccordion">
+    `;
+    
+    data.questions.forEach((questionData, index) => {
+        const question = questionData.question;
+        const answers = questionData.answers || [];
+        const collapseId = `collapse-${dimension}-${index}`;
+        const headingId = `heading-${dimension}-${index}`;
+        
+        html += `
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="${headingId}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
+                        <span class="question-number-accordion">${index + 1}</span>
+                        ${question}
+                    </button>
+                </h2>
+                <div id="${collapseId}" class="accordion-collapse collapse" aria-labelledby="${headingId}" 
+                     data-bs-parent="#questionsAccordion">
+                    <div class="accordion-body">
+                        ${answers.length > 0 ? `
+                            <strong>Możliwe odpowiedzi:</strong>
+                            <ul class="answers-list">
+                                ${answers.map(answer => `<li>${answer}</li>`).join('')}
+                            </ul>
+                        ` : '<em>Pytanie otwarte (brak predefiniowanych odpowiedzi)</em>'}
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    
+    questionsContent.innerHTML = html;
+    console.log('Questions displayed for dimension:', dimension);
+}
+
+// Function to display data sources
+function showDataSources(dimension) {
+    const data = dataSourcesData[dimension];
+    if (!data || !data.sources || data.sources.length === 0) {
+        questionsContent.innerHTML = '<p class="text-center text-muted">Brak źródeł danych dla tego wymiaru</p>';
+        return;
+    }
+    
+    // Build HTML for data sources
+    let html = `
+        <h3 class="mb-4 text-center">${data.title}</h3>
+        <div class="data-sources-list">
+    `;
+    
+    data.sources.forEach((source, index) => {
+        html += `
+            <div class="data-source-item">
+                <div class="source-number">${index + 1}</div>
+                <p>${source}</p>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    
+    questionsContent.innerHTML = html;
+    console.log('Data sources displayed for dimension:', dimension);
+}
+
+// Tab switching functionality
+tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const targetTab = this.getAttribute('data-tab');
+        
+        // Remove active class from all tabs
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Show corresponding content
+        if (targetTab === 'wskazniki') {
+            document.getElementById('wskazniki-content').classList.add('active');
+        } else if (targetTab === 'pytania') {
+            document.getElementById('pytania-content').classList.add('active');
+            // If a dimension is selected, show its questions
+            if (currentDimension) {
+                showQuestions(currentDimension);
+            }
+        }
+    });
+});
+
 // Add click event listeners to all dimension cards
 dimensionCards.forEach(card => {
     card.addEventListener('click', function() {
         const dimension = this.getAttribute('data-dimension');
         console.log('Card clicked, dimension:', dimension);
+        
+        // Store current dimension
+        currentDimension = dimension;
+        
+        // Update tab label based on dimension
+        const pytaniaTab = document.querySelector('.tab-btn[data-tab="pytania"]');
+        if (pytaniaTab) {
+            if (dimension === 'osiagniecia') {
+                pytaniaTab.textContent = 'Źródła danych';
+                pytaniaTab.setAttribute('aria-label', 'Źródła danych');
+            } else {
+                pytaniaTab.textContent = 'Pytania';
+                pytaniaTab.setAttribute('aria-label', 'Pytania');
+            }
+        }
+        
+        // Show indicators (always switch to indicators tab when card is clicked)
         showIndicators(dimension);
+        
+        // Also prepare questions (but don't show unless tab is active)
+        showQuestions(dimension);
         
         // Add active state to clicked card
         dimensionCards.forEach(c => c.classList.remove('active'));

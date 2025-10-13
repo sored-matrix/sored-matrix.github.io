@@ -1,0 +1,651 @@
+{
+  "organizacja": {
+    "title": "ORGANIZACJA przedszkola/szkoły sprzyjająca dostępności",
+    "questions": [
+      {
+        "question": "Czy w przedszkolu/szkole została wprowadzona procedura organizowania i udzielania pomocy psychologiczno-pedagogicznej(albo inny równoważny dokument)?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Kiedy procedura została wprowadzona w Pani/Pana przedszkolu/szkole ?",
+        "answers": []
+      },
+      {
+        "question": "Czy procedura organizowania i udzielania pomocy psychologiczno-pedagogicznej jest aktualizowana co jakiś czas?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Kiedy nastąpiła ostatnia aktualizacja tej procedury?",
+        "answers": []
+      },
+      {
+        "question": "Wobec braku takiej procedury proszę opisać jak zorganizowane jest udzielanie pomocy psychologiczno-pedagogicznej.",
+        "answers": []
+      },
+      {
+        "question": "Czy w przedszkolu/szkole powołany jest koordynator pomocy psychologiczno-pedagogicznej dla dzieci/uczniów ?",
+        "answers": [
+          "Tak, koordynatorem jest jedna osoba.",
+          "Tak, mamy zespół koordynatorów.",
+          "Nie, nie mamy koordynatora."
+        ]
+      },
+      {
+        "question": "Kto pełni rolę koordynatora pomocy psychologiczno-pedagogicznej?",
+        "answers": []
+      },
+      {
+        "question": "Kto wchodzi w skład zespołu koordynującego pomoc psychologiczno-pedagogiczną w przedszkolu/szkole ?",
+        "answers": []
+      },
+      {
+        "question": "Czy w przedszkolu/szkole powołany jest/są koordynator/rzy diagnozy?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Na jakim poziomie działa/ją koordynator/rzy diagnozy?",
+        "answers": [
+          "Na poziomie ucznia/uczennicy.",
+          "Na poziomie całej jednostki.",
+          "Inne"
+        ]
+      },
+      {
+        "question": "W jaki sposób zatem organizowane i nadzorowane są diagnozy dzieci/uczniów ?",
+        "answers": []
+      },
+      {
+        "question": "{if(instType == \"inst1\", 'Ile dzieci jest w przedszkolu?', 'Ilu uczniów jest w szkole?')}",
+        "answers": []
+      },
+      {
+        "question": "Proszę podać poniższe informacje o bezpłatnych posiłkach w przedszkolu/szkole .",
+        "answers": []
+      },
+      {
+        "question": "Proszę podać poniższe informacje o uczniach korzystających z bezpłatnego transportu.",
+        "answers": []
+      },
+      {
+        "question": "Ile dzieci/Ilu uczniów objętych jest pomocą psychologiczno-pedagogiczną na podstawie:",
+        "answers": []
+      },
+      {
+        "question": "Orzeczenia o potrzebie kształcenia specjalnego wydanego ze względu na niepełnosprawność",
+        "answers": [
+          "niesłyszący",
+          "słabosłyszący",
+          "niewidzący",
+          "słabowidzący",
+          "niepełnosprawni ruchowo, w tym z afazją",
+          "niepełnosprawni intelektualnie w stopniu lekkim",
+          "niepełnosprawni intelektualnie w stopniu umiarkowanym",
+          "niepełnosprawni intelektualnie w stopniu znacznym",
+          "z autyzmem, w tym z zespołem Aspergera",
+          "z niepełnosprawnością sprzężoną"
+        ]
+      },
+      {
+        "question": "Orzeczenia o potrzebie kształcenia specjalnego wydanego bez względu na:",
+        "answers": [
+          "niedostosowanie społeczne",
+          "zagrożenie niedostosowaniem społecznym"
+        ]
+      },
+      {
+        "question": "Innych orzeczeń i opinii",
+        "answers": [
+          "orzeczenia o potrzebie indywidualnego obowiązkowego rocznego przygotowania przedszkolnego",
+          "orzeczenia o potrzebie indywidualnego nauczania",
+          "orzeczenia o potrzebie zajęć rewalidacyjno-wychowawczych",
+          "opinii o potrzebie wczesnego wspomagania rozwoju dziecka",
+          "opinii w sprawie objęcia ucznia nauką w klasie terapeutycznej",
+          "opinii w sprawie dostosowania wymagań edukacyjnych wynikających z programu nauczania do ind. potrzeb edukacyjnych ucznia",
+          "opinia o specyficznych trudnościach w uczeniu się",
+          "opinia w sprawie udzielenia zezwolenia na indywidualny program lub tok nauki"
+        ]
+      },
+      {
+        "question": "Ile dzieci/Ilu uczniów objętych jest pomocą psychologiczno-pedagogiczną w przedszkolu/szkole z powodu:",
+        "answers": []
+      },
+      {
+        "question": "Ile dzieci/Ilu uczniów objętych jest pomocą psychologiczno-pedagogiczną w przedszkolu/szkole z powodu:",
+        "answers": []
+      },
+      {
+        "question": "Proszę odpowiedzieć na poniższe pytania nt. zajęć prowadzonych w ramach pomocy psychologiczno-pedagogicznej udzielanej w przedszkolu/szkole",
+        "answers": []
+      },
+      {
+        "question": "Proszę opisać w jaki sposób przydzielane są godziny zajęć dla dzieci/uczniów zorzeczeniem o potrzebie kształcenia specjalnego?",
+        "answers": []
+      },
+      {
+        "question": "Ile dzieci/Ilu uczniów korzysta zpomocy psychologiczno-pedagogicznej w przedszkolu/szkole na podstawie:",
+        "answers": [
+          "orzeczenia o potrzebie kształcenia specjalnego",
+          "opinii o potrzebie wczesnego wspomagania rozwoju",
+          "opinii wydanej przez poradnię psychologiczno-pedagogiczną",
+          "orzeczenia o potrzebie kształcenia specjalnego i opinii o potrzebie wczesnego wspomagania rozwoju",
+          "orzeczenia o potrzebie kształcenia specjalnego i opinii wydanej przez poradnię psychologiczno-pedagogiczną [dot. większej liczby opinii]",
+          "orzeczenia o potrzebie kształcenia specjalnego i opinii o potrzebie wczesnego wspomagania rozwoju i opinii wydanej przez poradnię psychologiczno-pedagogiczną",
+          "opinii o potrzebie wczesnego wspomagania rozwoju i opinii wydanej przez poradnię psychologiczno-pedagogiczną",
+          "wskazania przez nauczycieli i nauczycieli specjalistów potrzeby udzielenia pomocy psychologiczno-pedagogiczną dziecku (bez posiadania opinii poradni psychologiczno-pedagogicznej)"
+        ]
+      },
+      {
+        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują ze sobą w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Jak często taka współpraca ma miejsce?",
+        "answers": [
+          "Zawsze",
+          "Przeważnie",
+          "Rzadko",
+          "Inne"
+        ]
+      },
+      {
+        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów .",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują ze sobą w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "answers": []
+      },
+      {
+        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują ze sobą w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb dzieci/uczniów ?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Jak często taka współpraca ma miejsce?",
+        "answers": [
+          "Zawsze",
+          "Przeważnie",
+          "Rzadko",
+          "Inne"
+        ]
+      },
+      {
+        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów .",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują ze sobą w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "answers": []
+      },
+      {
+        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Jak często taka współpraca ma miejsce?",
+        "answers": [
+          "Zawsze",
+          "Przeważnie",
+          "Rzadko",
+          "Inne"
+        ]
+      },
+      {
+        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów .",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "answers": []
+      },
+      {
+        "question": "W ciągu roku szkolnego rodzice lub opiekunowi prawni dzieci/uczniów składają do dyrektora przedszkola/szkoły wnioski i/lub prośby m.in. dotyczące zaspokajania zróżnicowanych potrzeb uczniów.Proszę wymienić rodzaj zgłaszanych problemóww roku szkolnym 2025/2026.",
+        "answers": []
+      },
+      {
+        "question": "Proszę podać liczbę wniosków i/lub próśb, które wpłynęły w roku szkolnym 2025/2026 wg wskazanych wcześniej grup problemowych. Proszę wskazać w odpowiedzi na ile z nich zostały podjęte odpowiednie działania i podać jakie interwencje zostały wdrożone.",
+        "answers": []
+      },
+      {
+        "question": "Czy przedszkole/szkoła współpracuje z zewnętrznymi podmiotami na podstawie podpisanych umów/porozumień?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Proszę podać poniższe informacji o tego typu współpracy.",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego przedszkole nie podejmowało/szkoła nie podejmowała takiej współpracy?",
+        "answers": []
+      },
+      {
+        "question": "Czy przedszkole/szkoła współpracuje z zewnętrznymi podmiotami na podstawie nieformalnych ustaleń?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Proszę podać poniższe informacje na temat takiej nieformalnej współpracy.",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego przedszkole nie podejmowało/szkoła nie podejmowała takiej współpracy?",
+        "answers": []
+      },
+      {
+        "question": "Czy nauczyciele i nauczyciele specjaliści w ramach planowania lub realizacji wsparcia dla uczniów o zróżnicowanych potrzebach edukacyjnych współpracowali, w roku szkolnym 2025/2026, z zewnętrznymi podmiotami?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Z którymi z poniższych podmiotów współpraca miała miejsce?",
+        "answers": [
+          "poradnia psychologiczno-pedagogiczna",
+          "poradnia specjalistyczna",
+          "placówka doskonalenia nauczycieli",
+          "organizacja pozarządowa (NGO)"
+        ]
+      },
+      {
+        "question": "Jak często nauczyciele i nauczyciele specjaliści współpracują z tymi instytucjami?",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego taka współpraca nie jest podejmowana? Dlaczego nauczyciele i nauczyciele specjaliści w ramach planowania lub realizacji wsparcia dla dzieci/uczniów ozróżnicowanych potrzebach nie współpracowali w ciągu roku szkolnego 2025/2026 z zewnętrznymi podmiotami?",
+        "answers": []
+      }
+    ]
+  },
+  "architektura": {
+    "title": "ARCHITEKTURA zapewniająca dostępność",
+    "questions": [
+      {
+        "question": "Ile budynków wchodzi w skład przedszkola/szkoły ?",
+        "answers": [
+          "Jeden.",
+          "Więcej niż jeden."
+        ]
+      },
+      {
+        "question": "Czy budynki te znajdują się w bezpośrednim sąsiedztwie?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Czy między budynkami znajdującymi się w bezpośrednim sąsiedztwie są łączniki?",
+        "answers": [
+          "Tak, są łączniki na poziomie terenu.",
+          "Tak, są łączniki na poziomie poniżej terenu.",
+          "Tak, są łączniki na wyższym poziomie niż poziom terenu.",
+          "Nie, nie ma łączników między budynkami."
+        ]
+      },
+      {
+        "question": "W ilu budynkach wchodzących w skład przedszkola/szkoły",
+        "answers": []
+      },
+      {
+        "question": "Proszę wymienić, które przestrzenie nie są wolne od barier?",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego przedszkole/szkoła nie zapewnia wolnych od barier przestrzeni komunikacyjnych?",
+        "answers": []
+      },
+      {
+        "question": "W ilu budynkach wchodzących w skład przedszkola/szkoły",
+        "answers": []
+      },
+      {
+        "question": "Proszę wymienić do jakich pomieszczeń nie ma dostępu?",
+        "answers": []
+      },
+      {
+        "question": "Które z poniższych rozwiązań architektonicznych zostały wykorzystane w przedszkolu/szkole dla zapewnienia dostępności?",
+        "answers": [
+          "Rampy i podjazdy",
+          "Szerokie drzwi [min. 90 cm] i korytarze [min. 180 cm]",
+          "Windy i podnośniki",
+          "Dostosowane toalety",
+          "Oznakowanie (oznaczenia w alfabecie Braille'a, oznaczenia głosowe i kontrastowe) ułatwiające orientację w przestrzeni"
+        ]
+      },
+      {
+        "question": "Które z poniższych rozwiązań technicznych zostały wykorzystane w przedszkolu/szkole dla zapwenienia dostepności?",
+        "answers": [
+          "Systemy ostrzegania i ewakuacji dostosowane do potrzeb osób niedosłyszących i niewidomych, np. migające światła, sygnały wibracyjne",
+          "Systemy audiowizualne (informacje głosowe i wizualne, np. komunikaty głosowe w windach i na korytarzach, pętle indukcyjne)",
+          "Drzwi automatyczne"
+        ]
+      },
+      {
+        "question": "Czy w budynku/budynkach wchodzących w skład przedszkola/szkoły zapewniony jest dostęp do informacji na temat rozkładu pomieszczeń?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "W jaki sposób zapewniony jest dostęp do informacji o rozkładzie budynku?",
+        "answers": [
+          "Wizualny",
+          "Dotykowy",
+          "Głosowy"
+        ]
+      },
+      {
+        "question": "Czy w budynku/budynkach wchodzących w skład przedszkola/szkoly zapewniony jest wstęp dla osób korzystających z psa asystującego?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Dlaczego w budynku/budynkach wchodzących w skład jednostki nie jest zapewniony jest wstęp dla osób korzystających z psa asystującego?",
+        "answers": []
+      },
+      {
+        "question": "W jaki sposób przedszkole/szkoła zapewnia możliwość ewakuacji lub ratowanie osób ze szczególnymi potrzebami?",
+        "answers": [
+          "poprzez wprowadzenie procedury ewakuacyjnej",
+          "poprzez wprowadzenie instalacji/środków alarmujących osoby ze szczególnymi potrzebami, w tym osoby z niepełnosprawnością wzroku czy słuchu"
+        ]
+      }
+    ]
+  },
+  "cyfrowa": {
+    "title": "CYFROWA dostępność usług",
+    "questions": [
+      {
+        "question": "Proszę podać liczbę stron internetowych przedszkola/szkoły oraz liczbę aplikacji on-line wykorzystywanych przez przedszkole/szkołę ?",
+        "answers": []
+      },
+      {
+        "question": "Proszę określi w jaki stopniu strona/y internetowa/e przedszkola/szkoły i aplikacje on-line wykorzystywane przez przedszkole/szkołę sązgodne z wymogami Ustawy o dostępności cyfrowej.",
+        "answers": []
+      }
+    ]
+  },
+  "komunikacja": {
+    "title": "KOMUNIKACJA bez barier",
+    "questions": [
+      {
+        "question": "Które z poniższych środków wspierających komunikowanie się przedszkole/szkoła wykorzystuje w obsłudze osób ze szczególnymi potrzebami?",
+        "answers": [
+          "zastosowanie formularza kontaktowego na stronie internetowej",
+          "kontakt za pomocą poczty elektronicznej",
+          "przesyłanie wiadomości tekstowych, w tym z wykorzystaniem wiadomości SMS, MMS lub komunikatorów internetowych",
+          "komunikacja audiowizualna, w tym z wykorzystaniem komunikatorów internetowych"
+        ]
+      },
+      {
+        "question": "W jakim czasie od zgłoszenia potrzeby zapewniony jest kontakt osobisty z tłumaczem języka migowego?",
+        "answers": [
+          "bezpośrednio po zgłoszeniu potrzeby",
+          "w ciągu 1 dnia roboczego",
+          "w ciągu 2-3 dni roboczych",
+          "powyżej 3 dni roboczych"
+        ]
+      },
+      {
+        "question": "Które z urządzeń lub środków do obsługi osób słabosłyszących posiada przedszkole/szkoła ?",
+        "answers": [
+          "Pętle indukcyjne",
+          "Systemy FM"
+        ]
+      },
+      {
+        "question": "Czy na głównej stronie internetowej przedszkola/szkoły informacje o działalności zamieszczone są w którejś z poniższych form?",
+        "answers": [
+          "w formie tekstu odczytywanego maszynowo"
+        ]
+      }
+    ]
+  },
+  "zasoby": {
+    "title": "ZASOBY umożliwiające dostępność",
+    "questions": [
+      {
+        "question": "Czy przedszkole/szkoła dysponuje poniższymi gabinetami?",
+        "answers": []
+      },
+      {
+        "question": "Jeśli gabinet jest współdzielony proszę wskazać z jakim gabinetem?",
+        "answers": []
+      },
+      {
+        "question": "Czy przedszkole/szkoła posiada?",
+        "answers": [
+          "pracownię integracji sensorycznej",
+          "salę doświadczania świata (\"białą salę\")",
+          "pracownię wczesnego wspomagania rozwoju"
+        ]
+      },
+      {
+        "question": "Ile pomieszczeń typu pokój wyciszeń/strefa do samodzielnej nauki posiada przedszkole/szkoła ?",
+        "answers": []
+      },
+      {
+        "question": "Czy przedszkole jest wyposażone/szkoła jest wyposażona w poniższy sprzęt?",
+        "answers": [
+          "do terapii metodą Tomatis",
+          "do terapii metodą Warnkego"
+        ]
+      }
+    ]
+  },
+  "kadry": {
+    "title": "KADRY realizujące edukację dostępną",
+    "questions": [
+      {
+        "question": "Ilu nauczycieli wychowania przedszkolnego zatrudnionych jest w przedszkolu/przedmiotu zatrudnionych jest w szkole ?",
+        "answers": []
+      },
+      {
+        "question": "Jaki jest łączny wymiar etatów osób zatrudnionych w przedszkolu/szkole na poniższych stanowiskach?",
+        "answers": []
+      },
+      {
+        "question": "Ilu nauczycieli i nauczycieli specjalistów w ciągu ostatnich trzech lata, tj. między wrześniem 2023 roku, a wrześniem 2026 roku, podniosło swoje kwalifikacje zawodowe poprzez udział/ukończenie:",
+        "answers": [
+          "studiów podyplomowych kwalifikacyjnych",
+          "studiów podyplomowych doskonalących",
+          "kursów/szkoleń organizowanych przez szkoły wyższe lub instytuty badawcze",
+          "kursów/szkoleń organizowanych przez Ośrodek Rozwoju Edukacji (ORE)",
+          "kursów/szkoleń organizowanych przez placówki doskonalenia nauczycieli",
+          "kursów/szkoleń organizowanych przez kuratoria oświaty lub jednostki samorządu terytorialnego",
+          "kursów/szkoleń organizowanych przez podmiot komercyjny,",
+          "Inne:"
+        ]
+      },
+      {
+        "question": "Czy jest w przedszkolu/szkole jest przyjęty określony sposób zbierania informacji o potrzebach w zakresie doskonalenia nauczycieli i nauczycieli specjalistów?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "W jaki sposób zbierane są te informacje?",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego w przedszkolu/szkole nie ma przyjętego sposoby zbierania informacji o takich potrzebach?",
+        "answers": []
+      },
+      {
+        "question": "Czy przedszkole/szkoła finansuje lub współfinansuje podnoszenie kwalifikacji zawodowych przez nauczycieli i nauczycieli specjalistów?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Proszę określić zakres finansowania lub współfinansowania przez przedszkole/szkołę podnoszenia kwalifkiacji przez nauczycieli i nauczycieli specjalistów w ciągu ostatnich 3 lat.",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego przedszkole/szkoła nie finansuje lub współfinansuje podnoszenia kwalifikacji przez nauczycieli i nauczycieli specjalistów?",
+        "answers": []
+      },
+      {
+        "question": "Czy pracownicy niepedagogiczni wspierają nauczycieli i nauczycieli specjalistów w realizacji zadań na rzecz zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Proszę wskazać rodzaj wykonywanych czynności przez pracowników niepedagogicznych oraz podać liczbę osób zaangażowanych w dane czynności.",
+        "answers": [
+          "czynności opiekuńcze",
+          "czynności opiekuńcze",
+          "Inne:"
+        ]
+      },
+      {
+        "question": "Dlaczego pracownicy niepedagogicznie nie są angażowani w takie działania?",
+        "answers": []
+      }
+    ]
+  },
+  "dydaktyka": {
+    "title": "DYDAKTYKA zapewniająca dostępność procesu edukacyjnego",
+    "questions": [
+      {
+        "question": "W ilu przedmiotach nauczanych w przedszkolu/szkole wykorzystywane są następujące racjonalne usprawnienia?",
+        "answers": []
+      },
+      {
+        "question": "W ilu i w jakich, realizowanych w roku szkolnym 2025/2026, programach nauczania treści oparte były na metodyce uniwersalnego projektowania w edukacji (UDL)?",
+        "answers": []
+      },
+      {
+        "question": "W ilu programach nauczania wprowadzono w roku szkolnym 2025/2026 zmiany lub dostosowania ze względu na zróżnicowane potrzeby edukacyjne uczniów wynikające z poniższych przyczyn?",
+        "answers": [
+          "z niepełnosprawności",
+          "z niedostosowania społecznego",
+          "z zagrożenia niedostosowaniem społecznym",
+          "z zaburzeń zachowania lub emocji",
+          "ze szczególnych uzdolnień",
+          "ze specyficznych trudności w uczeniu się",
+          "z deficytów kompetencji i zaburzeń sprawności językowych",
+          "z choroby przewlekłej",
+          "z sytuacji kryzysowych lub traumatycznych",
+          "z niepowodzeń edukacyjnych",
+          "z zaniedbań środowiskowych związanych z sytuacją bytową ucznia i jego rodziny, sposobem spędzania czasu wolnego i kontaktami środowiskowymi",
+          "z trudności adaptacyjnych związanych z różnicami kulturowymi lub ze zmianą środowiska edukacyjnego, w tym związanych z wcześniejszym kształceniem za granicą",
+          "Inne:"
+        ]
+      },
+      {
+        "question": "W ilu programach nauczania, w roku szkolnym 2025/2026, wprowadzono wymienione niżej zmiany lub dostosowania ze względu na zróżnicowane potrzeby edukacyjne dzieci/uczniów ?",
+        "answers": [
+          "Treść merytoryczna (m.in. modyfikacja poleceń, ilość zadań, zakres zadań)",
+          "Dostępność (m.in. powiększenie czcionki, formatu, kontrastu, dostępność wersji elektronicznej, tekst łatwy do czytania i zrozumienia)",
+          "Forma przekazu (wersja papierowa, elektroniczna materiałów)",
+          "Inne:"
+        ]
+      },
+      {
+        "question": "Ile w ciągu ostatniego roku szkolnego (2025/2026) zrealizowano w przedszkolu/szkole innowacji i eksperymentów pedagogicznych w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "answers": []
+      },
+      {
+        "question": "Ile z tych innowacji i eksperymentów pedagogicznych zrealizowano w ramach I i II etapu edukacyjnego?",
+        "answers": []
+      }
+    ]
+  },
+  "uczestnictwo": {
+    "title": "UCZESTNICTWO umożliwiające pełen rozwój",
+    "questions": [
+      {
+        "question": "Czy w przedszkolu/szkole wprowadzono procedurę monitorowania frekwencji dzieci/uczniów (albo inny równoważny dokument)?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Kiedy procedura została wprowadzona w Pani/Pana przedszkolu/szkole ?",
+        "answers": []
+      },
+      {
+        "question": "W jaki sposób monitorowana jest frekwencja dzieci/uczniów w Pani/Pana przedszkolu/szkole ?",
+        "answers": []
+      },
+      {
+        "question": "Proszę podać liczbę nieobecności usprawiedliwionych uczniów wraz ze wskazaniem przyczyny nieobecności.",
+        "answers": []
+      },
+      {
+        "question": "Proszę podać liczbę nieobecności nieusprawiedliwionych uczniów wraz ze wskazaniem przyczyny nieobecności.",
+        "answers": []
+      },
+      {
+        "question": "Proszę podać liczbę nieobecności nieusprawiedliwionych uczniów z orzeczeniem o specjalnych potrzebach edukacyjnych wg przyczyny wydania orzeczenia.",
+        "answers": []
+      },
+      {
+        "question": "Czy w szkole realizowana jest polityka antydyskryminacyjna?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "W jaki sposób jest ona realizowana? Proszę podać przykładowe działania.",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego taka polityka nie jest realizowana w szkole?",
+        "answers": []
+      },
+      {
+        "question": "Czy w szkole wdrożona jest procedura przeciwdziałania przemocy rówieśniczej?",
+        "answers": [
+          "Tak",
+          "Nie"
+        ]
+      },
+      {
+        "question": "Proszę krótko opisać jak wygląda przeciwdziałanie przemocy rówieśniczej w Pani/Pana szkole?",
+        "answers": []
+      },
+      {
+        "question": "Dlaczego nie wprowadzono takiej procedury w Pani/Pana szkole?",
+        "answers": []
+      },
+      {
+        "question": "Proszę podać liczbę uczniów, którzy w ciągu 3 ostatnich, tj. od września 2023 roku, zrezygnowało z nauki w Pani/Pana szkole oraz wskazać w jakiego rodzaju szkole kontynuują naukę.",
+        "answers": []
+      }
+    ]
+  }
+}
