@@ -98,22 +98,22 @@
 
       const options = {
         contentKey: 'data',
-        nodeWidth: 280,
-        nodeHeight: 100,
-        fontColor: '#1f2a3a',
+        nodeWidth: 350,
+        nodeHeight: 120,
+        fontColor: '#ffffff',
         borderColor: '#e5e7eb',
-        childrenSpacing: 40,
-        siblingSpacing: 30,
+        childrenSpacing: 50,
+        siblingSpacing: 40,
         direction: 'top',
         nodeTemplate: (content) => {
           const name = content.name || '';
           const icon = content.icon || 'bi-question-circle';
           return `
-            <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;height:100%;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.1);">
-              <div style="width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6a11cb,#2575fc);flex-shrink:0;">
-                <i class="bi ${icon}" style="color:#fff;font-size:24px;"></i>
+            <div style="display:flex;align-items:center;gap:18px;padding:16px 24px;height:100%;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.2);">
+              <div style="width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.25);flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.15);">
+                <i class="bi ${icon}" style="color:#fff;font-size:32px;"></i>
               </div>
-              <div style="font-size:14px;font-weight:800;color:#1f2a3a;text-transform:uppercase;line-height:1.3;">${name}</div>
+              <div style="font-size:16px;font-weight:800;color:#fff;text-transform:uppercase;line-height:1.3;text-shadow:0 2px 4px rgba(0,0,0,.2);">${name}</div>
             </div>
           `;
         },
