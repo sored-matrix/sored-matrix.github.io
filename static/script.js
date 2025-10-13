@@ -184,39 +184,78 @@ function showIndicators(dimension) {
     }
     
     const data = indicatorData[dimension];
-    if (!data || !data.indicators || data.indicators.length === 0) {
+    if (!data) {
         console.log('No data found for dimension:', dimension);
         indicatorContent.innerHTML = '<p class="text-center text-muted">Brak wskaźników dla tego wymiaru</p>';
         return;
     }
     
-    // Build HTML for indicators
-    let html = `
-        <h3 class="mb-4 text-center">${data.title}</h3>
-        <div class="row">
-    `;
-    
-    data.indicators.forEach((indicator, index) => {
+    // Helper function to format indicator
+    function formatIndicator(indicator) {
         // Remove leading numbers (e.g., "1. ", "2. ")
-        let cleanedIndicator = indicator.replace(/^\d+\.\s*/, '');
+        let cleaned = indicator.replace(/^\d+\.\s*/, '');
         
         // Capitalize first letter
-        cleanedIndicator = cleanedIndicator.charAt(0).toUpperCase() + cleanedIndicator.slice(1);
+        cleaned = cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
         
         // Preserve line breaks by converting \n to <br>
-        const formattedIndicator = cleanedIndicator.replace(/\n/g, '<br>');
-        
-        html += `
-            <div class="col-md-4 mb-3">
-                <div class="indicator-item">
-                    <i class="bi bi-check-circle-fill indicator-icon"></i>
-                    <p>${formattedIndicator}</p>
-                </div>
-            </div>
-        `;
-    });
+        return cleaned.replace(/\n/g, '<br>');
+    }
     
-    html += '</div>';
+    // Build HTML based on structure
+    let html = `<h3 class="mb-4 text-center">${data.title}</h3>`;
+    
+    if (data.has_categories && data.categories) {
+        // Hierarchical structure with categories
+        data.categories.forEach((category, catIndex) => {
+            html += `
+                <div class="indicator-category">
+                    <h4 class="category-header">
+                        <i class="bi bi-folder2-open"></i>
+                        ${category.name}
+                    </h4>
+                    <div class="row">
+            `;
+            
+            category.indicators.forEach((indicator, index) => {
+                const formattedIndicator = formatIndicator(indicator);
+                
+                html += `
+                    <div class="col-md-4 mb-3">
+                        <div class="indicator-item">
+                            <i class="bi bi-check-circle-fill indicator-icon"></i>
+                            <p>${formattedIndicator}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
+            `;
+        });
+    } else if (data.indicators) {
+        // Flat structure without categories
+        html += '<div class="row">';
+        
+        data.indicators.forEach((indicator, index) => {
+            const formattedIndicator = formatIndicator(indicator);
+            
+            html += `
+                <div class="col-md-4 mb-3">
+                    <div class="indicator-item">
+                        <i class="bi bi-check-circle-fill indicator-icon"></i>
+                        <p>${formattedIndicator}</p>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+    } else {
+        html = '<p class="text-center text-muted">Brak wskaźników dla tego wymiaru</p>';
+    }
     
     indicatorContent.innerHTML = html;
     

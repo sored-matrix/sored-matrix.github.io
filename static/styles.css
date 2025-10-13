@@ -181,6 +181,10 @@ body.font-size-medium .dimension-definition-block .definition-text {
     font-size: 1.15rem;
 }
 
+body.font-size-medium .category-header {
+    font-size: 1.5rem;
+}
+
 body.font-size-large {
     font-size: 24px;
 }
@@ -215,6 +219,10 @@ body.font-size-large .dimension-definition-block .dimension-header {
 
 body.font-size-large .dimension-definition-block .definition-text {
     font-size: 1.3rem;
+}
+
+body.font-size-large .category-header {
+    font-size: 1.7rem;
 }
 
 /* Hide button text on small screens */
@@ -499,6 +507,28 @@ body.high-contrast .icon-wrapper i {
     border-radius: 15px;
     box-shadow: var(--card-shadow);
     min-height: 300px;
+}
+
+.indicator-category {
+    margin-bottom: 40px;
+}
+
+.category-header {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-header i {
+    font-size: 1.5rem;
 }
 
 .indicator-item {
@@ -847,6 +877,13 @@ body.high-contrast .indicator-item {
     background: #ffffff;
     border: 2px solid #000000;
     border-left: 6px solid #000000;
+}
+
+body.high-contrast .category-header {
+    background: #ffffff;
+    color: #000000;
+    border-left: 6px solid #000000;
+    border: 2px solid #000000;
 }
 
 body.high-contrast .indicator-icon {

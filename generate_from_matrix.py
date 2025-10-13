@@ -70,11 +70,12 @@ def main():
         # Extract short name for title
         short_name = extract_short_name(wymiar_full)
         
-        # Collect indicators
-        wskazniki = []
+        # Analyze structure: check if we have categories (Wskaźnik1) or just flat indicators
+        # Group by Wskaźnik1 to see if we have categories
+        categories_dict = {}
+        flat_indicators = []
         
         for idx, row in wymiar_df.iterrows():
-            # Combine Wskaźnik1 and Wskaźnik2
             wskaznik1 = row.get('Wskaźnik1', '')
             wskaznik2 = row.get('Wskaźnik2', '')
             
@@ -82,32 +83,58 @@ def main():
             if pd.isna(wskaznik1) and pd.isna(wskaznik2):
                 continue
             
-            # Create indicator text
-            if not pd.isna(wskaznik2) and str(wskaznik2).strip():
-                # If wskaznik2 exists, use it (it's the actual indicator)
-                indicator = str(wskaznik2).strip()
-            elif not pd.isna(wskaznik1) and str(wskaznik1).strip():
-                # Otherwise use wskaznik1
-                indicator = str(wskaznik1).strip()
-            else:
-                continue
+            # Clean strings
+            wskaznik1_str = str(wskaznik1).strip() if not pd.isna(wskaznik1) else ''
+            wskaznik2_str = str(wskaznik2).strip() if not pd.isna(wskaznik2) else ''
             
-            # Only add if not already in list (avoid duplicates)
-            if indicator and indicator not in wskazniki:
-                wskazniki.append(indicator)
+            # If we have both levels, use hierarchical structure
+            if wskaznik1_str and wskaznik2_str:
+                if wskaznik1_str not in categories_dict:
+                    categories_dict[wskaznik1_str] = []
+                if wskaznik2_str not in categories_dict[wskaznik1_str]:
+                    categories_dict[wskaznik1_str].append(wskaznik2_str)
+            # If only wskaznik1, it's a flat indicator
+            elif wskaznik1_str:
+                if wskaznik1_str not in flat_indicators:
+                    flat_indicators.append(wskaznik1_str)
+            # If only wskaznik2, it's also a flat indicator
+            elif wskaznik2_str:
+                if wskaznik2_str not in flat_indicators:
+                    flat_indicators.append(wskaznik2_str)
         
-        # Store data
-        indicators_data[dim_key] = {
-            "title": wymiar_full,
-            "short_name": short_name,
-            "indicators": wskazniki
-        }
+        # Decide on structure based on what we found
+        if categories_dict:
+            # We have hierarchical structure
+            categories_list = []
+            for category_name, indicators in categories_dict.items():
+                categories_list.append({
+                    "name": category_name,
+                    "indicators": indicators
+                })
+            
+            indicators_data[dim_key] = {
+                "title": wymiar_full,
+                "short_name": short_name,
+                "has_categories": True,
+                "categories": categories_list
+            }
+            
+            total_indicators = sum(len(cat["indicators"]) for cat in categories_list)
+            print(f"✅ {short_name}: {len(categories_list)} kategorii, {total_indicators} wskaźników")
+        else:
+            # Flat structure
+            indicators_data[dim_key] = {
+                "title": wymiar_full,
+                "short_name": short_name,
+                "has_categories": False,
+                "indicators": flat_indicators
+            }
+            
+            print(f"✅ {short_name}: {len(flat_indicators)} wskaźników (bez kategorii)")
         
         # Store definition with wymiar name as key
         if not pd.isna(definicja):
             definitions_data[wymiar_full] = str(definicja).strip()
-        
-        print(f"✅ {short_name}: {len(wskazniki)} wskaźników")
     
     # Save indicators to JSON
     with open('static/indicators_for_website.json', 'w', encoding='utf-8') as f:
@@ -125,17 +152,22 @@ def main():
     print(f"\n📋 Podsumowanie:")
     print(f"  - Wymiary: {len(indicators_data)}")
     print(f"  - Definicje: {len(definitions_data)}")
-    print(f"  - Łącznie wskaźników: {sum(len(v['indicators']) for v in indicators_data.values())}")
     
     # Show sample data
     print(f"\n📄 Przykładowe dane:")
     for dim_key, data in list(indicators_data.items())[:2]:
         print(f"\n  {data['title']}")
         print(f"    Definicja: {definitions_data.get(data['title'], 'Brak')[:100]}...")
-        print(f"    Wskaźniki ({len(data['indicators'])}):")
-        for ind in data['indicators'][:3]:
-            print(f"      • {ind[:80]}...")
+        if data.get('has_categories'):
+            print(f"    Kategorie ({len(data['categories'])}):")
+            for cat in data['categories'][:2]:
+                print(f"      📁 {cat['name'][:60]}... ({len(cat['indicators'])} wskaźników)")
+                for ind in cat['indicators'][:2]:
+                    print(f"         • {ind[:70]}...")
+        else:
+            print(f"    Wskaźniki ({len(data['indicators'])}):")
+            for ind in data['indicators'][:3]:
+                print(f"      • {ind[:80]}...")
 
 if __name__ == '__main__':
     main()
-
