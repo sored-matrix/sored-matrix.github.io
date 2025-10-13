@@ -136,8 +136,8 @@
       };
 
       try {
-        // Increase canvas height slightly to drop content below potential credits area
-        options.height = (options.nodeHeight * 3) + 400;
+        // Increase canvas height significantly to push watermark far below visible chart
+        options.height = (options.nodeHeight * 4) + 800;
         const tree = new ApexTree(container, options);
         tree.render(data);
 
