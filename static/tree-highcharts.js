@@ -123,15 +123,18 @@
           dataLabels: {
             useHTML: true,
             formatter: function () {
-              const d = dimensions[this.point.id];
+              // Use this.point properties that we set in nodes
+              const name = this.point.name || '';
+              const subtitle = this.point.title || '';
+              const icon = this.point.icon || 'bi-question-circle';
               return (
                 '<div class="hc-node-card">' +
                 '  <div class="hc-icon-circle">' +
-                '    <i class="bi ' + d.icon + '"></i>' +
+                '    <i class="bi ' + icon + '"></i>' +
                 '  </div>' +
                 '  <div class="hc-text">' +
-                '    <div class="hc-name">' + d.name + '</div>' +
-                (d.subtitle ? ('    <div class="hc-subtitle">' + d.subtitle + '</div>') : '') +
+                '    <div class="hc-name">' + name + '</div>' +
+                (subtitle ? ('    <div class="hc-subtitle">' + subtitle + '</div>') : '') +
                 '  </div>' +
                 '</div>'
               );
