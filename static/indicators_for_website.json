@@ -1,103 +1,111 @@
 {
-  "osiagniecia": {
-    "title": "OSIĄGNIĘCIA EDUKACYJNE",
-    "indicators": [
-      "1. uczenie się i stosowanie wiedzy",
-      "2. Ogólne zadania i obowiązki",
-      "3. Porozumiewanie się",
-      "4. Motoryka, poruszanie się – w tym mobilność i aktywność manualna",
-      "5. Dbanie o siebie, samoobsługa, samodzielność",
-      "6. Życie domowe",
-      "7. Wzajemne kontakty i związki międzyludzkie",
-      "8. Edukacja szkolna",
-      "9. Życie w społeczności lokalnej",
-      "Ocena efektywności indywidualnego programu edukacyjno-terapeutycznego (IPET)",
-      "Porównanie/Różnica średnich wyników uczniów z SPE do wyników ogółu uczniów/uczniów bez SPE\nalbo\nPołożenie wyników uczniów z SPE wobec wyników uczniów bez SPE na skali",
-      "Porównanie/Różnica średnich wyników uczniów z SPE do wyników ogółu uczniów/uczniów bez SPE\nalbo\nPołożenie wyników uczniów z SPE wobec wyników uczniów bez SPE na skali"
-    ]
-  },
-  "uczestnictwo": {
-    "title": "UCZESTNICTWO",
-    "indicators": [
-      "Procedura monitorowania frekwencji uczniów",
-      "Średnia liczba nieobecności (usprawiedliwionych i nieusprawiedliwionych) uczniów z SPE (wg orzeczeń) względem średniej liczby nieobecności uczniów ogółem",
-      "Średnia liczba nieobecności (usprawiedliwionych i nieusprawiedliwionych) uczniów z SPE (wg orzeczeń) względem średniej liczby nieobecności uczniów ogółem wg przedmiotów",
-      "Wyniki pomiaru dla oddziału/szkoły",
-      "A. perpspektywa systemowa (szkoły i przedszkola ogólnodostępne)\nB. perspektywa konkretnej szkoły/przedszkola (aktualne miejsce pracy)\nC. perspektywa własnej aktywności zawodowej"
-    ]
-  },
-  "dydaktyka": {
-    "title": "DYDAKTYKA",
-    "indicators": [
-      "Liczba przedmiotów, w których wykorzystywane są racjonalne usprawnienia: \n1)\tkomunikacja alternatywne i wspomagająca\n2)\tspecjalistyczne technologie asystujące\n3)\tETR\n4)\tPJM\n5)\tpętla indukcyjna (w sali)\n6)\tnapisy rozszerzone",
-      "Liczba programów nauczania opartych na metodyce UDL",
-      "Liczba programów nauczania, w których wprowadzono w ostatnim roku szkolnym (2025/2026) zmiany lub dostosowania ze względu na zróżnicowane potrzeby edukacyjne uczniów - potrzeby uczniów",
-      "Liczba programów nauczania, w których wprowadzono w ostatnim roku szkolnym (2024/2025) zmiany lub dostosowania ze względu na zróżnicowane potrzeby edukacyjne uczniów - zakres modyfikacji",
-      "Liczba zrealizowanych innowacji pedagogicznych w zakresie zaposkajania ZPE uczniów",
-      "Liczba zrealizowanych eksperymentów pedagogicznych w zakresie zaposkajania potrzeb ZPE uczniów"
-    ]
-  },
-  "kadry": {
-    "title": "KADRY",
-    "indicators": [
-      "Liczba nauczycieli zatrudnionych w szkole:\n(1) nauczyciele przedmiotowi (liczba osób)\n(2) nauczyciele specjaliści, w tym:\n(a) nauczyciel pedagog (łączny wymiar etatu)\n(b) psycholog\n(c) pedagog specjalny\n(d) logopeda\n(e) terapeuta pedagogiczny\n(3) doradca zawodowy (łączny wymiar etatów)\n(4) nauczyciele współorganizujący kształcenie (łączny wymiar etatów)\n(5) asystent międzykulturowy\n(6) nauczyciel bibliotekarz\n(7) nauczyciel praktycznej nauki zawodu\n(8) doradca metodyczny\n(9) personel niepedagogiczny",
-      "Udział nauczycieli i specjalistów zatrudnionych w jednostce, którzy podnieśli swoje kwalifikacje w zakresie edukacji włączającej i/lub praci z uczniami ze ZPE",
-      "Sposób zbierania informacji o ptrzebach w zakresie doskonalenia nauczycieli i nauczycieli specjalistów",
-      "Średnia kwota kosztów poniesionych przez jednostkę na podnoszenie kwalifikacji nauczucieli i nauczycieli specjalistów na 1 etat/osobę(?)",
-      "Liczba pracowników niepedagogicznych wspierających nauczycieli w realizacji zadań na rzecz zaspokajania zróżnicowanych potrzeb uczniów"
-    ]
-  },
-  "zasoby": {
-    "title": "ZASOBY",
-    "indicators": [
-      "Udział szkół i placówek przeznaczających środki na kształcenie specjalne przynajmniej w wysokości naliczonych kwot potrzeb oświatowych"
-    ]
-  },
   "organizacja": {
-    "title": "ORGANIZACJA",
+    "title": "ORGANIZACJA sprzyjająca dostępności",
+    "short_name": "ORGANIZACJA",
     "indicators": [
-      "Stopień sformalizowania organizowania i udzielania ppp w jednostce",
-      "Koordynator działań związanych z rozpoznawaniem i zaspokajaniem potrzeb edukacyjnych wszystkich uczniów",
-      "Udział uczniów ze orzeczeniem o potrzebie kształcenia specjalnego w jednostce/placówce w:\nA. ogólnej liczbie uczniów\nB. oddziałach ogólnodostępnych\nC. oddziałach inetgeracyjnych\nD. oddziałach specjalnych",
-      "Udział uczniów uzyskujących pomoc pp w jednostce/placówce w:\nA. ogólnej liczbie uczniów\nB. oddziałach ogólnodostępnych\nC. oddziałach inetgeracyjnych\nD. oddziałach specjalnych",
-      "Udział uczniów uzyskujących pomoc pp w jednostce/placówce w:\nA. ogólnej liczbie uczniów\nB. oddziałach ogólnodostępnych\nC. oddziałach inetgeracyjnych\nD. oddziałach specjalnych",
-      "Udział uczniów w zajęciach pp realizowanych w jednostce/placówce:\n1) zajęcia rozwijające uzdolnienia\n2) zajęcia korekcyjno-kompensacyjne\n3) zajęcia logopedyczne\n4) zajęcia rozwijające kompetencje emocjonalno-społeczne \n5) inne zajęcia o charakterze terapeutycznym\n6) porady i konsultacje\n7) klasa terapeutyczna\n8) zajęcia rozwijające umiejętności uczenia się\n9) zajęcia dydaktyczno-wyrównawcze\n10) zajęcia związane z wyborem kierunku kształcenia i zawodu\n11) warsztaty\n12) warsztaty i szkolenia",
-      "współpraca nauczycieli ze specjalistami w zakresie rozpoznawania i zaspokajania potrzeb edukacyjnych uczniów",
-      "współpraca nauczycieli przedmiotów ze specjalistami w obrębie rozwoju kompetencji nauczycieli w kontekście zaspokajania szczególnych potrzeb uczniów -",
-      "współpraca z rodzicami - udział rodziców w organizowaniu pomocy?",
-      "Liczba wniosków/próśb rodziców dotyczących zaspokajania SPE uczniów",
-      "Liczba podjętych interwencji na rzecz zaspokajania SPE uczniów w odpowiedzi na złożone wnioski/prośby rodziców",
-      "liczba instytucji/organizacji/projektów/wydarzeń w obszarze edukacji włączającej, z którymi jednostka współpracuje (współpraca formalna)",
-      "liczba instytucji/organizacji/projektów/wydarzeń w obszarze edukacji włączającej, z którymi jednostka współpracuje (współpraca nieformalna)",
-      "współpraca nauczycieli w zakresie planowania i realizacji wsparcia dla uczniów ze ZPE z zewnętrznymi podmiotami"
+      "wewnętrzna procedura organizowania i udzielania pomocy psychologiczno-pedagogicznej",
+      "akceptacja wprowadzonej procedury/polityki włączania przez nauczycieli i administrację",
+      "przywództwo dyrektora (postawy wobec włączania uczniów o zróżnicowanych potrzebach, metod nauczania włączającego)",
+      "koordynator działań związanych z rozpoznawaniem i zaspokajaniem potrzeb edukacyjnych wszystkich uczniów",
+      "różnorodność środowiska szkolnego",
+      "charakterystyka dzieci i uczniów objętych pomocą psychologiczno-pedagogiczną w przedszkolu/szkole",
+      "podstawa objęcia pomocą psychologiczno-pedagogiczną dzieci/uczniów",
+      "skala uczestnictwa dzieci i uczniów w zajęciach realizowanych przez nauczycieli specjalistów wraz z wymiarem godzinowym zajęć przydzielonych i zrealizowanych",
+      "współpraca nauczycieli z nauczycielami specjalistami w zakresie rozpoznawania i zaspokajania potrzeb edukacyjnych dzieci/uczniów",
+      "współpraca nauczycieli przedmiotów ze specjalistami w obrębie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb dzieci/uczniów",
+      "współpraca nauczycieli i nauczycieli specjalistów w zakresie planowania i realizacji wsparcia dla uczniów ze zróżnicowanymi potrzebami edukacyjnymi z zewnętrznymi podmiotami",
+      "współpraca z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów",
+      "wnioski/prośby złożone przez rodziców dotyczące zaspokajania zróżnicowanych potrzeb dzieci/uczniów i podjęte w odpowiedzi na nie interwencje",
+      "formalna i nieformalna współpraca przedszkola/szkoły z instytucjami edukacyjnymi, kulturalnymi itp.",
+      "bezpłatne posiłki dla dzieci ze środowisk o trudnej sytuacji społeczno-ekonomicznej",
+      "bezpłatny transport dla uczniów, w tym dla uczniów z niepełnosprawnościami"
     ]
   },
   "architektura": {
-    "title": "ARCHITEKTURA",
+    "title": "ARCHITEKTURA zapewniająca dostępność ",
+    "short_name": "ARCHITEKTURA",
     "indicators": [
-      "Udział jednostek, które w swoich budynkach zapewniają wolne od barier przestrzenie komunikacyjne",
-      "Udział jednostek, w których możliwy jest dostęp do wszystkich pomieszczeń (z wyłączeniem pomieszczeń technicznych)",
-      "Udział jednostek, które zapewniają informację na temat rozkładu pomieszczeń w budynku/ach",
-      "Udział jednostek zapewniających wstęp do budynku/budynków osobie korzystającej z psa asystującego",
-      "Udział jednostek zapewniających osobom ze szczególnymi potrzebami możliwości ewakuacji lub ich uratowania w inny sposób",
-      "Udział jednostek dysponujących gabinetem dla\n(1) pedagoga\n(2) psychologa\n(3) logopedy\n(4) pedagoga specjalnego\n(5) rehabilitanta/fizjoterapeuty\n(6) doradcy zawodowego\n(7) pielęgniarki\n(8) stomatologa",
-      "Udział jednostek posiadających:\n(1) pracownię integracji sensorycznej\n(2) salę doświadczania świata (\"białą salę\")\n(3) pracownię wczesnego wspomagania rozwoju [dotyczy przedszkoli i szkół podstawowych z oddziałami przedszkolnymi],\n(4) pokój wyciszeń/strefa do samodzielnej nauki",
-      "Udział jednostek wyposażonych w sprzęt:\n(1) do terapii metodą Tomatis\n(2) do terapii metodą Warnkego\n(3) do treningu EEG Biofeedbeck"
+      "udział jednostek, które w swoich budynkach zapewniają wolne od barier przestrzenie komunikacyjne",
+      "udział jednostek, w których możliwy jest dostęp do wszystkich pomieszczeń (z wyłączeniem pomieszczeń technicznych)",
+      "udział jednostek, które zapewniają informację na temat rozkładu pomieszczeń w budynku/ach",
+      "udział jednostek zapewniających wstęp do budynku/budynków osobie korzystającej z psa asystującego",
+      "udział jednostek zapewniających osobom ze szczególnymi potrzebami możliwości ewakuacji lub ich uratowania w inny sposób"
     ]
   },
   "cyfrowa": {
-    "title": "CYFROWA",
+    "title": "CYFROWA dostępność usług ",
+    "short_name": "CYFROWA",
     "indicators": [
-      "Udział stron internetowych jednostki/zespołu szkół zgodnych z wymogamia UdC",
-      "Udział aplikacji wykorzystywanych przez jednostkę zgodnych z wymogami UdC"
+      "strony internetowe jednostki zgodne z wymogami ustawy o dostępności cyfrowej",
+      "aplikacje wykorzystywane przez jednostki zgodne z wymogami ustawy o dostępności cyfrowej"
     ]
   },
   "komunikacja": {
-    "title": "KOMUNIKACJA",
+    "title": "KOMUNIKACJA bez barier",
+    "short_name": "KOMUNIKACJA",
     "indicators": [
-      "Udział podmiotów zapewniających osobom ze szczególnymi potrzebami obsługę z wykorzystaniem sposobów/środków wspierających komunikowanie się:\na)        Zastosowanie formularza kontaktowego\nb)        Kontakt za pomocą poczty elektronicznej\nc)        Przesyłanie wiadomości tekstowych, w tym z wykorzystaniem wiadomości SMS,\nMMS lub komunikatorów internetowych\nd)        Komunikacja audiowizualna, w tym z wykorzystaniem komunikatorów\ninternetowych\ne)        Przesyłanie faksów\nf)        Wykorzystanie tłumacza języka migowego przez strony internetowe i/lub aplikacje\n(tłumaczenie online)\ng)        Pomoc tłumacza języka migowego – kontakt osobisty. Jeśli \"TAK\", to w jakim czasie od zgłoszenia potrzeby zapewniony jest kontakt z tłumaczem: (1) od razu, (2) w ciągu 1 dnia roboczego, (3) w ciągu 2-3 dni roboczych, (4) powyżej 3 dni roboczych \nh)        Kontakt z pomocą tłumacza-przewodnika (kontakt osobisty)",
-      "Udział podmiotów/jednostek posiadających urządzenia lub środki do obsługi osób słaboszłyszących:\na)\tPętle indukcyjne - jeśli tak, należy podać liczbę\nb)\tSystemy FM - jeśli tak, należy podać liczbę\nc)\tSystemy na podczerwień (IR)  - jeśli tak, należy podać liczbę\nd)\tSystemy Bluetooth  - jeśli tak, należy podać liczbę\ne)\tInne (prosimy o opis słowny posiadanych urządzeń lub środków technicznych)",
-      "Udział podmiotów/jednostek zapewniających na swojej głównej stronie intermetowej informację o zakresie swojej działalności w postaci:\na)        tekstu odczytywanego maszynowo\nb)        nagrania treści w polskim języku migowym (PJM) w postaci pliku wideo\nc)        informacji w tekście łatwym do czytania (ETR)"
+      "zapewnienie osobom ze szczególnymi potrzebami obsługę z wykorzystania sposobów/środków wspierających komunikowanie się",
+      "posiadanie urządzeń lub środków od obsługi osób słabosłyszących",
+      "zapewnianie na stronie internetowej informacji o zakresie swojej działalności w postaci  tekstu odczytywanego maszynowo, nagrania treści w polskim języku migowym (PJM) w postaci pliku wideo, informacji w tekście łatwym do czytania (ETR)"
+    ]
+  },
+  "zasoby": {
+    "title": "ZASOBY umożliwiające dostępność",
+    "short_name": "ZASOBY",
+    "indicators": [
+      "udział jednostek dysponujących gabinetami dla specjalistów",
+      "udział jednostek posiadających specjalistyczne pomieszczenia dla dzieci i uczniów (pracownia integracji sensorycznej, sala doświadczania świata, pracownia wczesnego wspomagania rozwoju, pokój wyciszeń/strefę samodzielnej nauki)",
+      "udział jednostek wyposażonych w specjalistyczny sprzęt terapeutyczny (do terapii metodą Tomatis, Warnkego, do treningu EEG Biofeedback)",
+      "środki przeznaczone na kształcenie specjalne co najmniej w wysokości naliczonych kwot potrzeb oświatowych",
+      "weryfikacja efektywności wydatkowanych środków"
+    ]
+  },
+  "kadry": {
+    "title": "KADRY realizujące edukację dostępną ",
+    "short_name": "KADRY",
+    "indicators": [
+      "liczba nauczycieli zatrudnionych w przedszkolu/szkole",
+      "wymiar etatów zatrudnionych nauczycieli specjalistów, doradców zawodowych, nauczycieli współorganizujących kształcenie, asystentów międzykulturowych, nauczycieli bibliotekarzy, doradców metodycznych i personelu niepedagogicznego",
+      "liczba pracowników niepedagogicznych wspierających nauczycieli w realizacji zadań na rzecz zaspokajania zróżnicowanych potrzeb dzieci/uczniów",
+      "skala podnoszenia kwalifikacji nauczycieli i nauczycieli specjalistów zatrudnionych w przedszkolu/szkole",
+      "sposób zbierania informacji o potrzebach w zakresie doskonalenia nauczycieli i nauczycieli specjalistów",
+      "finansowanie/współfinansowanie podnoszenia kwalifikacji nauczycieli i nauczycieli specjalistów"
+    ]
+  },
+  "dydaktyka": {
+    "title": "DYDAKTYKA zapewniająca dostępność procesu edukacyjnego ",
+    "short_name": "DYDAKTYKA",
+    "indicators": [
+      "wykorzystywanie racjonalnych usprawnień w poszczególnych przedmiotach",
+      "programy nauczania, w których wprowadzono (w ostatnim roku szkolnym) zmiany lub dostosowania ze względu na zróżnicowane potrzeby edukacyjne dzieci/uczniów",
+      "programy nauczania oparte na metodyce UDL (Universal Design for Learning - Projektowanie Uniwersalne w Edukacji)",
+      "zrealizowane innowacje pedagogiczne w zakresie zaspokajania zróżnicowanych potrzeb dzieci/uczniów",
+      "zrealizowane eksperymenty pedagogiczne w zakresie zaspokajania zróżnicowanych potrzeb dzieci/uczniów"
+    ]
+  },
+  "uczestnictwo": {
+    "title": "UCZESTNICTWO umożliwiające pełen rozwój ",
+    "short_name": "UCZESTNICTWO",
+    "indicators": [
+      "frekwencja – nieobecności wg kategorii ich przyczyn (przeszkody, unikanie, brak zaangażowania)",
+      "ograniczenia w zakresie uczestnictwa: segregacja i koncentracja grup uczniów",
+      "wskaźnik rezygnacji ze szkoły i powtarzania klasy",
+      "polityka antyprzemocowa i antydyskryminacyjna",
+      "przeciwdziałanie przemocy rówieśniczej",
+      "postawy nauczycieli wobec edukacji włączającej",
+      "dobrostan szkolny uczniów",
+      "klimat szkoły"
+    ]
+  },
+  "osiagniecia": {
+    "title": "OSIĄGNIĘCIA EDUKACYJNE wynikające z realizacji edukacji dostępnej",
+    "short_name": "OSIĄGNIĘCIA",
+    "indicators": [
+      "poziom funkcjonowania dzieci/uczniów",
+      "wyniki egzaminów zewnętrznych uczniów (wg cech uczniów)",
+      "wsparcie w tranzycji (między klasami, między szkołami, między szkołą a rynkiem pracy)",
+      "wskaźnik ukończenia szkoły średniej",
+      "wskaźnik zapisów na studia i ukończenia studiów"
     ]
   }
 }

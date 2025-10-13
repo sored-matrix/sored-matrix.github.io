@@ -173,11 +173,11 @@ body.font-size-medium .section-title {
     font-size: 2.5rem;
 }
 
-body.font-size-medium .dimension-header {
-    font-size: 1.8rem;
+body.font-size-medium .dimension-definition-block .dimension-header {
+    font-size: 1.6rem;
 }
 
-body.font-size-medium .definition-text {
+body.font-size-medium .dimension-definition-block .definition-text {
     font-size: 1.15rem;
 }
 
@@ -209,11 +209,11 @@ body.font-size-large .section-title {
     font-size: 3rem;
 }
 
-body.font-size-large .dimension-header {
-    font-size: 2rem;
+body.font-size-large .dimension-definition-block .dimension-header {
+    font-size: 1.8rem;
 }
 
-body.font-size-large .definition-text {
+body.font-size-large .dimension-definition-block .definition-text {
     font-size: 1.3rem;
 }
 
@@ -500,39 +500,47 @@ body.high-contrast .icon-wrapper i {
 .definitions-list {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
 }
 
-.dimension-group {
-    margin-bottom: 20px;
+.dimension-definition-block {
+    padding: 25px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    border-left: 5px solid var(--secondary-color);
+    transition: all 0.3s ease;
 }
 
-.dimension-header {
+.dimension-definition-block:hover {
+    transform: translateX(3px);
+    box-shadow: var(--card-shadow);
+}
+
+.dimension-definition-block .dimension-header {
     color: var(--text-dark);
     font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid var(--secondary-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--secondary-color);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.dimension-header::before {
+.dimension-definition-block .dimension-header::before {
     content: '';
-    width: 8px;
-    height: 30px;
+    width: 6px;
+    height: 28px;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
-.dimension-group .definition-item {
-    margin-bottom: 15px;
-}
-
-.dimension-group .definition-item:last-child {
-    margin-bottom: 0;
+.dimension-definition-block .definition-text {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
 }
 
 .definition-item {
@@ -567,7 +575,15 @@ body.high-contrast .icon-wrapper i {
 .definition-content {
     flex-grow: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.definition-wymiar {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
 }
 
 .definition-text {
@@ -578,28 +594,22 @@ body.high-contrast .icon-wrapper i {
 }
 
 /* High contrast mode for definitions */
-body.high-contrast .dimension-header {
-    color: #000000;
-    border-bottom: 4px solid #000000;
-}
-
-body.high-contrast .dimension-header::before {
-    background: #000000;
-}
-
-body.high-contrast .definition-item {
+body.high-contrast .dimension-definition-block {
     background: #ffffff;
     border: 2px solid #000000;
     border-left: 6px solid #000000;
 }
 
-body.high-contrast .definition-number {
-    background: #000000;
-    color: #ffffff;
-    border: 2px solid #000000;
+body.high-contrast .dimension-definition-block .dimension-header {
+    color: #000000;
+    border-bottom: 3px solid #000000;
 }
 
-body.high-contrast .definition-text {
+body.high-contrast .dimension-definition-block .dimension-header::before {
+    background: #000000;
+}
+
+body.high-contrast .dimension-definition-block .definition-text {
     color: #000000;
 }
 

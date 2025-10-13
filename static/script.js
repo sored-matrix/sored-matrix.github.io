@@ -257,44 +257,43 @@ definitionsModal.addEventListener('show.bs.modal', function () {
         return;
     }
     
-    // Build HTML grouped by dimensions
+    // Build HTML - now definitionsData contains wymiar title -> definition mapping
     let html = '';
-    let globalCount = 0;
+    let count = 0;
     
-    // Iterate through dimensions
+    // Iterate through dimensions in order
     for (const [dimension, data] of Object.entries(indicatorData)) {
-        const dimensionIndicators = data.indicators || [];
-        
-        // Find indicators that have definitions
-        const indicatorsWithDefinitions = dimensionIndicators.filter(ind => definitionsData[ind]);
-        
-        if (indicatorsWithDefinitions.length === 0) {
-            continue; // Skip dimensions with no definitions
-        }
-        
-        // Get full dimension title with subtitle
         const fullTitle = dimensionFullTitles[dimension] || data.title;
         
-        // Add dimension header
-        html += `<div class="dimension-group">
-                    <h5 class="dimension-header">${fullTitle}</h5>`;
-        
-        // Add definitions for this dimension (without indicator names)
-        indicatorsWithDefinitions.forEach(indicator => {
-            globalCount++;
-            const definition = definitionsData[indicator];
+        // Find definition for this wymiar by matching titles
+        let definition = null;
+        for (const [wymiarKey, def] of Object.entries(definitionsData)) {
+            // Match by checking if wymiarKey contains the dimension title or vice versa
+            const wymiarKeyUpper = wymiarKey.toUpperCase();
+            const dataTitleUpper = data.title.toUpperCase();
             
-            html += `
-                <div class="definition-item">
-                    <div class="definition-number">${globalCount}</div>
-                    <div class="definition-content">
-                        <p class="definition-text">${definition}</p>
-                    </div>
-                </div>
-            `;
-        });
+            // Check if they share the main keyword
+            if (wymiarKeyUpper.includes(dataTitleUpper.split(' ')[0]) || 
+                dataTitleUpper.includes(wymiarKeyUpper.split(' ')[0])) {
+                definition = def;
+                break;
+            }
+        }
         
-        html += '</div>'; // Close dimension-group
+        if (!definition) {
+            console.log('No definition found for:', dimension, data.title);
+            continue; // Skip dimensions without definitions
+        }
+        
+        count++;
+        
+        // Add dimension with its definition as header + text
+        html += `
+            <div class="dimension-definition-block">
+                <h5 class="dimension-header">${fullTitle}</h5>
+                <p class="definition-text">${definition}</p>
+            </div>
+        `;
     }
     
     if (html === '') {
