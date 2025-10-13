@@ -30,25 +30,30 @@
 
     function initChart() {
       // Define dimension nodes with icons
+      // Unified blue palette to match the site
+      const BLUE_ROOT = '#1e3a8a';      // dark navy for root
+      const BLUE_CAPITAL = '#2563eb';   // blue-600 for capitals
+      const BLUE_DIMENSION = '#3b82f6'; // blue-500 for dimensions
+
       const dimensions = {
-        'osiagniecia': { name: 'OSIĄGNIĘCIA', subtitle: 'edukacyjne', icon: 'bi-mortarboard-fill', color: '#6a11cb' },
+        'osiagniecia': { name: 'OSIĄGNIĘCIA', subtitle: 'edukacyjne', icon: 'bi-mortarboard-fill', color: BLUE_ROOT },
         
         // Capitals
-        'kap_ludzki': { name: 'Kapitał', subtitle: 'ludzki', icon: 'bi-person-badge-fill', color: '#8b5cf6' },
-        'kap_materialny': { name: 'Kapitał', subtitle: 'materialny', icon: 'bi-box-seam-fill', color: '#3b82f6' },
-        'kap_org': { name: 'Kapitał', subtitle: 'organizacyjny', icon: 'bi-diagram-3-fill', color: '#06b6d4' },
-        'kap_rel': { name: 'Kapitał', subtitle: 'relacyjny', icon: 'bi-chat-dots-fill', color: '#10b981' },
-        'kap_int': { name: 'Kapitał', subtitle: 'intelektualny', icon: 'bi-book-fill', color: '#f59e0b' },
+        'kap_ludzki': { name: 'KAPITAŁ LUDZKI', subtitle: '', icon: 'bi-person-badge-fill', color: BLUE_CAPITAL },
+        'kap_materialny': { name: 'KAPITAŁ MATERIALNY', subtitle: '', icon: 'bi-box-seam-fill', color: BLUE_CAPITAL },
+        'kap_org': { name: 'KAPITAŁ ORGANIZACYJNY', subtitle: '', icon: 'bi-diagram-3-fill', color: BLUE_CAPITAL },
+        'kap_rel': { name: 'KAPITAŁ RELACYJNY', subtitle: '', icon: 'bi-chat-dots-fill', color: BLUE_CAPITAL },
+        'kap_int': { name: 'KAPITAŁ INTELEKTUALNY', subtitle: '', icon: 'bi-book-fill', color: BLUE_CAPITAL },
         
         // Dimensions
-        'kadry': { name: 'KADRY', subtitle: '', icon: 'bi-person-badge-fill', color: '#8b5cf6' },
-        'architektura': { name: 'ARCHITEKTURA', subtitle: '', icon: 'bi-building-fill', color: '#3b82f6' },
-        'zasoby': { name: 'ZASOBY', subtitle: '', icon: 'bi-box-seam-fill', color: '#3b82f6' },
-        'organizacja': { name: 'ORGANIZACJA', subtitle: '', icon: 'bi-diagram-3-fill', color: '#06b6d4' },
-        'uczestnictwo': { name: 'UCZESTNICTWO', subtitle: '', icon: 'bi-people-fill', color: '#06b6d4' },
-        'komunikacja': { name: 'KOMUNIKACJA', subtitle: '', icon: 'bi-chat-dots-fill', color: '#10b981' },
-        'cyfrowa': { name: 'CYFROWA', subtitle: '', icon: 'bi-laptop-fill', color: '#10b981' },
-        'dydaktyka': { name: 'DYDAKTYKA', subtitle: '', icon: 'bi-book-fill', color: '#f59e0b' }
+        'kadry': { name: 'KADRY', subtitle: '', icon: 'bi-person-badge-fill', color: BLUE_DIMENSION },
+        'architektura': { name: 'ARCHITEKTURA', subtitle: '', icon: 'bi-building-fill', color: BLUE_DIMENSION },
+        'zasoby': { name: 'ZASOBY', subtitle: '', icon: 'bi-box-seam-fill', color: BLUE_DIMENSION },
+        'organizacja': { name: 'ORGANIZACJA', subtitle: '', icon: 'bi-diagram-3-fill', color: BLUE_DIMENSION },
+        'uczestnictwo': { name: 'UCZESTNICTWO', subtitle: '', icon: 'bi-people-fill', color: BLUE_DIMENSION },
+        'komunikacja': { name: 'KOMUNIKACJA', subtitle: '', icon: 'bi-chat-dots-fill', color: BLUE_DIMENSION },
+        'cyfrowa': { name: 'CYFROWA', subtitle: '', icon: 'bi-laptop-fill', color: BLUE_DIMENSION },
+        'dydaktyka': { name: 'DYDAKTYKA', subtitle: '', icon: 'bi-book-fill', color: BLUE_DIMENSION }
       };
 
       // Build hierarchical data structure
@@ -74,7 +79,7 @@
         { id: 'dydaktyka', parent: 'kap_int', level: 2 }
       ];
 
-      Highcharts.chart(container, {
+      const chart = Highcharts.chart(container, {
         chart: {
           type: 'organization',
           inverted: true, // Makes root appear on right
@@ -98,54 +103,31 @@
           data: chartData.map(node => {
             return node.parent ? [node.parent, node.id] : null;
           }).filter(Boolean),
-          levels: [{
-            level: 0,
-            color: '#6a11cb',
-            dataLabels: {
-              color: 'white'
-            },
-            height: 25
-          }, {
-            level: 1,
-            color: '#2575fc',
-            dataLabels: {
-              color: 'white'
-            }
-          }, {
-            level: 2,
-            color: '#6366f1'
-          }],
-          nodes: chartData.map(node => {
-            const dim = dimensions[node.id];
-            return {
-              id: node.id,
-              name: dim.name,
-              title: dim.subtitle,
-              color: dim.color,
-              dataLabels: {
-                useHTML: true,
-                formatter: function() {
-                  const d = dimensions[this.point.id];
-                  return `
-                    <div class="hc-node-card">
-                      <div class="hc-icon-circle">
-                        <i class="bi ${d.icon}"></i>
-                      </div>
-                      <div class="hc-text">
-                        <div class="hc-name">${d.name}</div>
-                        ${d.subtitle ? `<div class="hc-subtitle">${d.subtitle}</div>` : ''}
-                      </div>
-                    </div>
-                  `;
-                }
-              }
-            };
-          }),
+          levels: [{ level: 0, color: BLUE_ROOT }, { level: 1, color: BLUE_CAPITAL }, { level: 2, color: BLUE_DIMENSION }],
+          nodes: chartData.map(node => ({
+            id: node.id,
+            name: dimensions[node.id].name,
+            title: dimensions[node.id].subtitle,
+            color: dimensions[node.id].color
+          })),
           colorByPoint: false,
           nodeWidth: 'auto',
           dataLabels: {
-            color: 'white',
-            nodeFormat: '{point.name}'
+            useHTML: true
+          },
+          nodeFormatter: function () {
+            const d = dimensions[this.point.id];
+            return (
+              '<div class="hc-node-card">' +
+              '  <div class="hc-icon-circle">' +
+              '    <i class="bi ' + d.icon + '"></i>' +
+              '  </div>' +
+              '  <div class="hc-text">' +
+              '    <div class="hc-name">' + d.name + '</div>' +
+              (d.subtitle ? ('    <div class="hc-subtitle">' + d.subtitle + '</div>') : '') +
+              '  </div>' +
+              '</div>'
+            );
           },
           borderColor: 'white',
           nodePadding: 10,
@@ -153,6 +135,21 @@
           linkColor: '#e5e7eb'
         }]
       });
+
+      // React to High Contrast toggle: black nodes, white text/links
+      function applyContrastColors(isHC) {
+        const nodes = chartData.map(n => ({ id: n.id, color: isHC ? '#000000' : dimensions[n.id].color }));
+        chart.update({ series: [{ nodes, linkColor: isHC ? '#ffffff' : '#e5e7eb' }] }, true, false);
+      }
+
+      // Observe body class changes to toggle high contrast for the chart
+      const bodyObserver = new MutationObserver(() => {
+        applyContrastColors(document.body.classList.contains('high-contrast'));
+      });
+      bodyObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+      // Initial apply based on current mode
+      applyContrastColors(document.body.classList.contains('high-contrast'));
     }
   });
 })();
