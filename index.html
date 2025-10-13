@@ -285,9 +285,16 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- ApexTree (ApexCharts Org Chart) -->
-    <script src="https://cdn.jsdelivr.net/npm/apextree"></script>
-    
+    <!-- ApexTree (ESM) → expose as global for our script -->
+    <script type="module">
+      try {
+        const mod = await import('https://cdn.jsdelivr.net/npm/apextree/+esm');
+        window.ApexTree = mod.default || mod.ApexTree || mod;
+      } catch (e) {
+        console.error('ApexTree load failed', e);
+      }
+    </script>
+
     <!-- External JavaScript -->
     <script src="static/script.js"></script>
     <script src="static/tree-apextree.js"></script>
