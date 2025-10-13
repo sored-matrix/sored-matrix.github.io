@@ -490,6 +490,15 @@ body.high-contrast .apext-icon { background: #000 !important; border: 2px solid 
 body.high-contrast .apext-icon i { color: #fff !important; }
 body.high-contrast .apext-name { color: #fff !important; }
 
+/* Global kill-switch for ApexCharts watermark */
+.apexcharts-credits {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    bottom: -2000px !important;
+}
+
 #orgchart-diagram svg {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: visible;

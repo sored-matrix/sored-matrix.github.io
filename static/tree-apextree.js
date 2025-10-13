@@ -164,7 +164,15 @@
         // Run after initial render and observe future DOM changes
         hideCredits();
         const mo = new MutationObserver(hideCredits);
-        mo.observe(container, { childList: true, subtree: true });
+        mo.observe(document.body, { childList: true, subtree: true });
+
+        // As a last resort, inject a style tag to nuke credits everywhere
+        if (!document.getElementById('kill-apex-credits')) {
+          const style = document.createElement('style');
+          style.id = 'kill-apex-credits';
+          style.textContent = '.apexcharts-credits{display:none!important;visibility:hidden!important;pointer-events:none!important;position:absolute!important;bottom:-2000px!important;}';
+          document.head.appendChild(style);
+        }
 
         // High contrast mode
         function applyHC() {
