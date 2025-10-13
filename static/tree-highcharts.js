@@ -83,12 +83,13 @@
         chart: {
           type: 'organization',
           inverted: true, // Makes root appear on right
-          height: 1200,
+          height: 900,
           width: null, // full width
           marginLeft: 100,
           marginRight: 100,
           marginTop: 50,
-          marginBottom: 50
+          marginBottom: 50,
+          backgroundColor: 'transparent'
         },
         title: {
           text: null
@@ -119,7 +120,7 @@
             icon: dimensions[node.id].icon
           })),
           colorByPoint: false,
-          nodeWidth: 280,
+          nodeWidth: 360,
           dataLabels: {
             useHTML: true,
             formatter: function () {
@@ -141,7 +142,7 @@
             }
           },
           borderColor: 'white',
-          nodePadding: 20,
+          nodePadding: 25,
           linkLineWidth: 2,
           linkColor: '#cbd5e1'
         }]
@@ -149,8 +150,56 @@
 
       // React to High Contrast toggle: black nodes, white text/links
       function applyContrastColors(isHC) {
-        const nodes = chartData.map(n => ({ id: n.id, color: isHC ? '#000000' : dimensions[n.id].color }));
-        chart.update({ series: [{ nodes, linkColor: isHC ? '#ffffff' : '#e5e7eb' }] }, true, false);
+        const nodes = chartData.map(n => ({ 
+          id: n.id, 
+          color: isHC ? '#000000' : dimensions[n.id].color 
+        }));
+        
+        chart.update({ 
+          chart: {
+            backgroundColor: isHC ? '#ffffff' : 'transparent'
+          },
+          series: [{ 
+            nodes, 
+            linkColor: isHC ? '#ffffff' : '#cbd5e1',
+            borderColor: isHC ? '#ffffff' : 'white',
+            linkLineWidth: isHC ? 3 : 2
+          }] 
+        }, true, false);
+        
+        // Force repaint of cards in high contrast
+        if (isHC) {
+          document.querySelectorAll('.hc-node-card').forEach(card => {
+            card.style.background = '#000';
+            card.style.border = '2px solid #fff';
+          });
+          document.querySelectorAll('.hc-icon-circle').forEach(circle => {
+            circle.style.background = '#000';
+            circle.style.border = '2px solid #fff';
+          });
+          document.querySelectorAll('.hc-icon-circle i').forEach(icon => {
+            icon.style.color = '#fff';
+          });
+          document.querySelectorAll('.hc-name, .hc-subtitle').forEach(text => {
+            text.style.color = '#fff';
+          });
+        } else {
+          // Reset to normal styles
+          document.querySelectorAll('.hc-node-card').forEach(card => {
+            card.style.background = '';
+            card.style.border = '';
+          });
+          document.querySelectorAll('.hc-icon-circle').forEach(circle => {
+            circle.style.background = '';
+            circle.style.border = '';
+          });
+          document.querySelectorAll('.hc-icon-circle i').forEach(icon => {
+            icon.style.color = '';
+          });
+          document.querySelectorAll('.hc-name, .hc-subtitle').forEach(text => {
+            text.style.color = '';
+          });
+        }
       }
 
       // Observe body class changes to toggle high contrast for the chart
