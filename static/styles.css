@@ -462,7 +462,7 @@ body.high-contrast .apex-diagram .apexcharts-rect { stroke: #000 !important; str
 /* ApexTree tweaks */
 .apextree-diagram {
     width: 100%;
-    min-height: 1800px;
+    min-height: auto;
     overflow-x: auto;
 }
 

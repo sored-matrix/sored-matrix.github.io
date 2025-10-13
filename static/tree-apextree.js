@@ -102,6 +102,7 @@
         nodeHeight: 350,
         fontColor: '#ffffff',
         borderColor: '#cbd5e1',
+        edgeColor: 'black',
         borderWidth: 8,
         childrenSpacing: 100,
         siblingSpacing: 80,
