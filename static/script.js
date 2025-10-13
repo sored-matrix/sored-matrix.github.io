@@ -431,6 +431,41 @@ dimensionCards.forEach(card => {
 
 console.log('Card click handlers attached to', dimensionCards.length, 'cards');
 
+// View Navigation
+const viewTabs = document.querySelectorAll('.view-tab');
+const contentViews = document.querySelectorAll('.content-view');
+
+viewTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+        const targetView = this.getAttribute('data-view');
+        
+        // Remove active class from all tabs and views
+        viewTabs.forEach(t => t.classList.remove('active'));
+        contentViews.forEach(v => v.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Show corresponding view
+        const targetViewElement = document.getElementById(`${targetView}-view`);
+        if (targetViewElement) {
+            targetViewElement.classList.add('active');
+        }
+        
+        console.log('Switched to view:', targetView);
+    });
+    
+    // Keyboard support
+    tab.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+        }
+    });
+});
+
+console.log('View navigation handlers attached to', viewTabs.length, 'tabs');
+
 // Full dimension titles with subtitles
 const dimensionFullTitles = {
     'osiagniecia': 'OSIĄGNIĘCIA EDUKACYJNE wynikające z realizacji edukacji dostępnej',

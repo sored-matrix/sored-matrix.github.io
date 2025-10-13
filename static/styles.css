@@ -315,6 +315,143 @@ body.high-contrast .hero-section {
     opacity: 0.95;
 }
 
+/* View Navigation */
+.view-navigation {
+    background: var(--card-bg);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.view-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.view-tab {
+    background: transparent;
+    border: 2px solid transparent;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.view-tab i {
+    font-size: 1.3rem;
+}
+
+.view-tab:hover {
+    background: rgba(106, 17, 203, 0.1);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.view-tab.active {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+}
+
+.view-tab:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Content Views */
+.content-view {
+    display: none;
+}
+
+.content-view.active {
+    display: block;
+    animation: fadeInView 0.4s ease;
+}
+
+@keyframes fadeInView {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.relationships-container {
+    min-height: 600px;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    overflow: auto;
+}
+
+/* Tree Diagram Styles */
+#tree-diagram {
+    width: 100%;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tree-diagram svg {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tree-link {
+    transition: stroke-opacity 0.3s ease;
+}
+
+.tree-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tree-node:hover rect {
+    filter: brightness(1.1);
+    stroke-width: 3;
+}
+
+.tree-icon-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tree-icon {
+    font-size: 28px;
+    color: white;
+}
+
+.capital-node rect {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dimension-node rect {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive tree diagram */
+@media (max-width: 768px) {
+    #tree-diagram {
+        min-height: 600px;
+    }
+}
+
 /* Section Title */
 .section-title {
     color: var(--primary-color);
@@ -959,6 +1096,51 @@ body.high-contrast .source-number {
 body.high-contrast .dimension-card.active {
     border: 4px solid #000000;
     background: #ffffff;
+}
+
+body.high-contrast .view-navigation {
+    background: #ffffff;
+    border-bottom: 3px solid #000000;
+}
+
+body.high-contrast .view-tab {
+    color: #000000;
+    border-color: #000000;
+}
+
+body.high-contrast .view-tab:hover {
+    background: #ffffff;
+    border-color: #000000;
+}
+
+body.high-contrast .view-tab.active {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+body.high-contrast .relationships-container {
+    background: #ffffff;
+    border: 3px solid #000000;
+}
+
+body.high-contrast .tree-link {
+    stroke: #000000 !important;
+    stroke-opacity: 1 !important;
+}
+
+body.high-contrast .tree-node rect {
+    fill: #ffffff !important;
+    stroke: #000000 !important;
+    stroke-width: 3 !important;
+}
+
+body.high-contrast .tree-node text {
+    fill: #000000 !important;
+}
+
+body.high-contrast .tree-icon {
+    color: #000000 !important;
 }
 
 /* Footer */
