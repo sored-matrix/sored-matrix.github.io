@@ -14,18 +14,43 @@ def clean_conditional(text):
     text = text.replace('*', '')
     
     # Process conditional expressions with proper spacing
-    # Pattern: {if(instType=="inst1",'option1','option2')}
+    # Pattern: {if(instType=="inst1",'option1','option2')} or {if(instType == "inst1", 'option1', 'option2')}
     def replace_conditional(match):
         full_match = match.group(0)
         try:
-            # Extract the two options from the conditional
-            pattern = r"\{if\([^,]+,'([^']+)','([^']+)'\)\}"
+            # Extract the two options from the conditional (handle both with and without spaces)
+            # Pattern supports: ,'option' or , 'option' (with space after comma)
+            pattern = r"\{if\([^,]+,\s*'([^']+)'\s*,\s*'([^']+)'\s*\)\}"
             m = re.match(pattern, full_match)
             if m:
                 option1 = m.group(1)
                 option2 = m.group(2)
-                # Always add spaces around to prevent word concatenation
-                return f" {option1}/{option2} "
+                
+                # Special handling for full questions
+                # e.g., "Ile dzieci jest w przedszkolu?" + "Ilu uczniów jest w szkole?" 
+                #    -> "Ile dzieci/uczniów jest w przedszkolu/szkole?"
+                if '?' in option1 and '?' in option2:
+                    # Use first option as base, but use neutral grammar
+                    # Replace school-specific words with combined form
+                    result = option1
+                    
+                    # Handle case-sensitive replacements
+                    if 'dzieci' in option1 and 'uczniów' in option2:
+                        result = result.replace('dzieci', 'dzieci/uczniów')
+                    elif 'dzieci' in option1 and 'ucznia' in option2:
+                        result = result.replace('dzieci', 'dzieci/ucznia')
+                        
+                    if 'przedszkolu' in option1:
+                        result = result.replace('przedszkolu', 'przedszkolu/szkole')
+                    if 'przedszkolem' in option1:
+                        result = result.replace('przedszkolem', 'przedszkolem/szkołą')
+                    if 'przedszkola' in option1:
+                        result = result.replace('przedszkola', 'przedszkola/szkoły')
+                    
+                    return f" {result} "
+                else:
+                    # Simple word replacement
+                    return f" {option1}/{option2} "
             return full_match
         except:
             return full_match
@@ -41,6 +66,9 @@ def clean_conditional(text):
     
     # Clean up multiple spaces (consolidate to single space)
     text = re.sub(r'\s+', ' ', text).strip()
+    
+    # Remove spaces before punctuation marks
+    text = re.sub(r'\s+([?!.,;:])', r'\1', text)
     
     return text
 

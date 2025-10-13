@@ -10,7 +10,7 @@
         ]
       },
       {
-        "question": "Kiedy procedura została wprowadzona w Pani/Pana przedszkolu/szkole ?",
+        "question": "Kiedy procedura została wprowadzona w Pani/Pana przedszkolu/szkole?",
         "answers": []
       },
       {
@@ -29,7 +29,7 @@
         "answers": []
       },
       {
-        "question": "Czy w przedszkolu/szkole powołany jest koordynator pomocy psychologiczno-pedagogicznej dla dzieci/uczniów ?",
+        "question": "Czy w przedszkolu/szkole powołany jest koordynator pomocy psychologiczno-pedagogicznej dla dzieci/uczniów?",
         "answers": [
           "Tak, koordynatorem jest jedna osoba.",
           "Tak, mamy zespół koordynatorów.",
@@ -41,7 +41,7 @@
         "answers": []
       },
       {
-        "question": "Kto wchodzi w skład zespołu koordynującego pomoc psychologiczno-pedagogiczną w przedszkolu/szkole ?",
+        "question": "Kto wchodzi w skład zespołu koordynującego pomoc psychologiczno-pedagogiczną w przedszkolu/szkole?",
         "answers": []
       },
       {
@@ -60,15 +60,15 @@
         ]
       },
       {
-        "question": "W jaki sposób zatem organizowane i nadzorowane są diagnozy dzieci/uczniów ?",
+        "question": "W jaki sposób zatem organizowane i nadzorowane są diagnozy dzieci/uczniów?",
         "answers": []
       },
       {
-        "question": "{if(instType == \"inst1\", 'Ile dzieci jest w przedszkolu?', 'Ilu uczniów jest w szkole?')}",
+        "question": "Ile dzieci/uczniów jest w przedszkolu/szkole?",
         "answers": []
       },
       {
-        "question": "Proszę podać poniższe informacje o bezpłatnych posiłkach w przedszkolu/szkole .",
+        "question": "Proszę podać poniższe informacje o bezpłatnych posiłkach w przedszkolu/szkole.",
         "answers": []
       },
       {
@@ -144,7 +144,7 @@
         ]
       },
       {
-        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują ze sobą w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują ze sobą w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów?",
         "answers": [
           "Tak",
           "Nie"
@@ -160,15 +160,15 @@
         ]
       },
       {
-        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów .",
+        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów.",
         "answers": []
       },
       {
-        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują ze sobą w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują ze sobą w zakresie rozpoznawania i zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów?",
         "answers": []
       },
       {
-        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują ze sobą w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb dzieci/uczniów ?",
+        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują ze sobą w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb dzieci/uczniów?",
         "answers": [
           "Tak",
           "Nie"
@@ -184,15 +184,15 @@
         ]
       },
       {
-        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów .",
+        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów.",
         "answers": []
       },
       {
-        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują ze sobą w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują ze sobą w zakresie rozwoju kompetencji nauczycieli w kontekście zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów?",
         "answers": []
       },
       {
-        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "question": "Czy w przedszkolu/szkole nauczyciele i nauczyciele specjaliście współpracują z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów?",
         "answers": [
           "Tak",
           "Nie"
@@ -208,11 +208,11 @@
         ]
       },
       {
-        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów .",
+        "question": "Proszę krótko opisać jak przebiega współpraca nauczycieli i nauczycieli specjalistów z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów.",
         "answers": []
       },
       {
-        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "question": "Dlaczego nauczyciele i nauczyciele specjaliście nie współpracują z rodzicami w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów?",
         "answers": []
       },
       {
@@ -283,7 +283,7 @@
     "title": "ARCHITEKTURA zapewniająca dostępność",
     "questions": [
       {
-        "question": "Ile budynków wchodzi w skład przedszkola/szkoły ?",
+        "question": "Ile budynków wchodzi w skład przedszkola/szkoły?",
         "answers": [
           "Jeden.",
           "Więcej niż jeden."
@@ -382,7 +382,7 @@
     "title": "CYFROWA dostępność usług",
     "questions": [
       {
-        "question": "Proszę podać liczbę stron internetowych przedszkola/szkoły oraz liczbę aplikacji on-line wykorzystywanych przez przedszkole/szkołę ?",
+        "question": "Proszę podać liczbę stron internetowych przedszkola/szkoły oraz liczbę aplikacji on-line wykorzystywanych przez przedszkole/szkołę?",
         "answers": []
       },
       {
@@ -413,7 +413,7 @@
         ]
       },
       {
-        "question": "Które z urządzeń lub środków do obsługi osób słabosłyszących posiada przedszkole/szkoła ?",
+        "question": "Które z urządzeń lub środków do obsługi osób słabosłyszących posiada przedszkole/szkoła?",
         "answers": [
           "Pętle indukcyjne",
           "Systemy FM"
@@ -447,7 +447,7 @@
         ]
       },
       {
-        "question": "Ile pomieszczeń typu pokój wyciszeń/strefa do samodzielnej nauki posiada przedszkole/szkoła ?",
+        "question": "Ile pomieszczeń typu pokój wyciszeń/strefa do samodzielnej nauki posiada przedszkole/szkoła?",
         "answers": []
       },
       {
@@ -463,7 +463,7 @@
     "title": "KADRY realizujące edukację dostępną",
     "questions": [
       {
-        "question": "Ilu nauczycieli wychowania przedszkolnego zatrudnionych jest w przedszkolu/przedmiotu zatrudnionych jest w szkole ?",
+        "question": "Ilu nauczycieli wychowania przedszkolnego zatrudnionych jest w przedszkolu/przedmiotu zatrudnionych jest w szkole?",
         "answers": []
       },
       {
@@ -514,7 +514,7 @@
         "answers": []
       },
       {
-        "question": "Czy pracownicy niepedagogiczni wspierają nauczycieli i nauczycieli specjalistów w realizacji zadań na rzecz zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "question": "Czy pracownicy niepedagogiczni wspierają nauczycieli i nauczycieli specjalistów w realizacji zadań na rzecz zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów?",
         "answers": [
           "Tak",
           "Nie"
@@ -564,7 +564,7 @@
         ]
       },
       {
-        "question": "W ilu programach nauczania, w roku szkolnym 2025/2026, wprowadzono wymienione niżej zmiany lub dostosowania ze względu na zróżnicowane potrzeby edukacyjne dzieci/uczniów ?",
+        "question": "W ilu programach nauczania, w roku szkolnym 2025/2026, wprowadzono wymienione niżej zmiany lub dostosowania ze względu na zróżnicowane potrzeby edukacyjne dzieci/uczniów?",
         "answers": [
           "Treść merytoryczna (m.in. modyfikacja poleceń, ilość zadań, zakres zadań)",
           "Dostępność (m.in. powiększenie czcionki, formatu, kontrastu, dostępność wersji elektronicznej, tekst łatwy do czytania i zrozumienia)",
@@ -573,7 +573,7 @@
         ]
       },
       {
-        "question": "Ile w ciągu ostatniego roku szkolnego (2025/2026) zrealizowano w przedszkolu/szkole innowacji i eksperymentów pedagogicznych w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów ?",
+        "question": "Ile w ciągu ostatniego roku szkolnego (2025/2026) zrealizowano w przedszkolu/szkole innowacji i eksperymentów pedagogicznych w zakresie zaspokajania zróżnicowanych potrzeb edukacyjnych dzieci/uczniów?",
         "answers": []
       },
       {
@@ -593,11 +593,11 @@
         ]
       },
       {
-        "question": "Kiedy procedura została wprowadzona w Pani/Pana przedszkolu/szkole ?",
+        "question": "Kiedy procedura została wprowadzona w Pani/Pana przedszkolu/szkole?",
         "answers": []
       },
       {
-        "question": "W jaki sposób monitorowana jest frekwencja dzieci/uczniów w Pani/Pana przedszkolu/szkole ?",
+        "question": "W jaki sposób monitorowana jest frekwencja dzieci/uczniów w Pani/Pana przedszkolu/szkole?",
         "answers": []
       },
       {
