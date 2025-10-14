@@ -13,8 +13,7 @@
     <div id="demo-box">
       <div class="demo-icon">🎓</div>
       <h2>Wersja Demonstracyjna</h2>
-      <p>To jest wersja demonstracyjna strony przygotowywana przez Instytut Badań Edukacyjnych (IBE) prezentująca wymiary edukacji włączającej.</p>
-      <p>System SORED (System Oceny Rozwoju Edukacji Dostępnej) to kompleksowe narzędzie do oceny dziewięciu wymiarów dostępności w edukacji.</p>
+      <p>To jest wersja demonstracyjna strony przygotowywanej przez Instytut Badań Edukacyjnych (IBE), która prezentuje wymiary edukacji włączającej.</p>
       <button id="demo-enter-btn">Przejdź do wersji demonstracyjnej</button>
     </div>
   `;
